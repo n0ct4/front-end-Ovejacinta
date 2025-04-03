@@ -13,6 +13,10 @@ def index():
 def vista_usuario():
     return render_template('usuario.html')  
 
+@app.route('/viajes')
+def viaje():
+    return render_template('viajes.html')
+
 
 @app.route('/login', methods=['POST'])
 def login():
