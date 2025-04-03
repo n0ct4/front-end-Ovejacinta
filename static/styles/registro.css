@@ -1,0 +1,107 @@
+.botonRegistro {
+    width: 100%;
+    /* background-color: #d4ac7a; */
+    background-color: #b2844b;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+
+.botonRegistro:hover {
+    /* background-color: #d4ac7a; */
+    background-color: #b2844b;
+}
+
+.botonRegistro:focus {
+    outline: none;
+    /* box-shadow: 0 0 0 2px #d4ac7a;  */
+    box-shadow: 0 0 0 2px #b2844b;
+    /* box-shadow: 0 0 0 4px #d4ac7a; */
+    box-shadow: 0 0 0 4px #b2844b;
+}
+
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 16px;
+    /* background-color: burlywood; */
+    background-image: url("../img/puente.jpg");
+    width: 100%;
+    height: auto;
+    clear: both;
+    background-size: cover;
+}
+
+.contenedor-formulario {
+    width: 100%;
+    max-width: 400px; /* Tamaño reducido */
+
+}
+.caja-formulario {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.encabezado-formulario {
+    /* background-color: #b2844b; */
+    background-color: #f0c897;
+    color: black;
+    text-align: center;
+    padding: 16px;
+}
+
+.subtitulo {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.contenedor-mensaje {
+    display: none;
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.mensaje-exito {
+    background-color: #ECFDF5;
+    border: 1px solid #D1FAE5;
+    color: #065F46;
+}
+
+.mensaje-error {
+    background-color: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #991B1B;
+}
+
+.campo-formulario {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid #D1D5DB;
+    /* gris 300 */
+    border-radius: 6px;
+    transition: border-color 0.2s;
+}
+
+.campo-formulario:focus {
+    outline: none;
+    border-color: #b2844b;
+    box-shadow: 0 0 0 2px #b2844b;
+}
+
+.texto-error {
+    display: none;
+    color: #EF4444;
+    /* rojo 500 */
+    font-size: 0.75rem;
+    /* xs */
+    margin-top: 4px;
+}
