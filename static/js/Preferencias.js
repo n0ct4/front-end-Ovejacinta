@@ -1,50 +1,42 @@
-let currentQuestion = 1; // Inicia en la primera pregunta
+let currentBlock = 0; // Índice del bloque actual (0, 1 o 2)
+const blocks = document.querySelectorAll('.question-block');
 
-// Muestra la siguiente pregunta
-function showNextQuestion() {
-    const currentQuestionElement = document.getElementById(`question-${currentQuestion}`);
-    currentQuestionElement.style.display = "none"; // Ocultar la pregunta actual
+function showBlock(index) {
+    blocks.forEach((block, i) => {
+        block.style.display = i === index ? 'block' : 'none';
+    });
 
-    currentQuestion++; // Incrementar la pregunta actual
+    // Mostrar/ocultar botones según el bloque actual
+    document.getElementById("prev-btn").style.display = index > 0 ? "inline-block" : "none";
+    document.getElementById("next-btn").style.display = index < blocks.length - 1 ? "inline-block" : "none";
+    document.getElementById("submit-btn").style.display = index === blocks.length - 1 ? "inline-block" : "none";
+}
 
-    const nextQuestionElement = document.getElementById(`question-${currentQuestion}`);
-    nextQuestionElement.style.display = "block"; // Mostrar la siguiente pregunta
-
-    // Mostrar el botón "Anterior"
-    if (currentQuestion > 1) {
-        document.getElementById("prev-btn").style.display = "inline-block";
-    }
-
-    // Si es la última pregunta, mostrar el botón "Enviar"
-    if (currentQuestion === 9) {
-        document.getElementById("next-btn").style.display = "none"; // Ocultar el botón siguiente
-        document.getElementById("submit-btn").style.display = "inline-block"; // Mostrar el botón de enviar
+function showNextBlock() {
+    if (currentBlock < blocks.length - 1) {
+        currentBlock++;
+        showBlock(currentBlock);
     }
 }
 
-// Muestra la pregunta anterior
-function showPrevQuestion() {
-    const currentQuestionElement = document.getElementById(`question-${currentQuestion}`);
-    currentQuestionElement.style.display = "none"; // Ocultar la pregunta actual
-
-    currentQuestion--; // Decrementar la pregunta actual
-
-    const prevQuestionElement = document.getElementById(`question-${currentQuestion}`);
-    prevQuestionElement.style.display = "block"; // Mostrar la pregunta anterior
-
-    // Si es la primera pregunta, ocultar el botón "Anterior"
-    if (currentQuestion === 1) {
-        document.getElementById("prev-btn").style.display = "none";
-    }
-
-    // Mostrar el botón "Siguiente"
-    if (currentQuestion < 9) {
-        document.getElementById("next-btn").style.display = "inline-block";
-        document.getElementById("submit-btn").style.display = "none"; // Ocultar el botón de enviar
+function showPrevBlock() {
+    if (currentBlock > 0) {
+        currentBlock--;
+        showBlock(currentBlock);
     }
 }
 
-// Función para enviar las respuestas (puedes personalizar esta función)
 function enviarRespuestas() {
     alert("Las respuestas han sido enviadas correctamente.");
+    console.log("Redirigiendo a login...");
+    // Espera 2 segundos antes de redirigir
+    setTimeout(() => {
+        window.location.href = "../login.html"; // Ruta para que después de que se envíe el mensaje vaya a la página del login
+    }, 2000);
 }
+
+
+// Iniciar al cargar
+window.onload = () => showBlock(currentBlock);
+
+
