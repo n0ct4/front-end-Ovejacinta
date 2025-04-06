@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (userData) {
         // Actualiza el nombre en el sidebar
-        const sidebarName = document.querySelector('.sidebar h6');
-        if (sidebarName) {
-            sidebarName.textContent = userData.username || 'Usuario';
+        const sidebarNombre = document.querySelector('.sidebar h6');
+        if (sidebarNombre) {
+            sidebarNombre.textContent = userData.username || 'Usuario';
         }
         
         // Actualiza el título de bienvenida
-        const welcomeTitle = document.querySelector('.user-welcome h4');
-        if (welcomeTitle) {
+        const tituloBienvenida = document.querySelector('.user-welcome h4');
+        if (tituloBienvenida) {
             welcomeTitle.textContent = `Bienvenido, ${userData.username || 'Usuario'}!`;
         }  
     } 
