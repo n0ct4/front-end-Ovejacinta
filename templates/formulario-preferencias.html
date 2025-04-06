@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuestionario de Preferencias</title>
     <link rel="stylesheet" href="../static/styles/preferencias.css">
 </head>
+
 <body>
     <div class="form-container">
         <div class="form-box">
             <h1>Cuestionario de Preferencias</h1>
             <form id="questionnaire-form" onsubmit="event.preventDefault(); enviarRespuestas();">
-
                 <!-- Bloque 1: Preguntas 1-3 -->
-                <div class="question-block">
+                <div id="group-1" class="question-block">
                     <!-- Pregunta 1 -->
                     <div class="question">
                         <label for="p1">1. ¿Eres amante del vino y te gustaría visitar bodegas locales?</label>
@@ -50,7 +51,7 @@
                 </div>
 
                 <!-- Bloque 2: Preguntas 4-6 -->
-                <div class="question-block" style="display:none;">
+                <div id="group-2" class="question-block" style="display:none;">
                     <!-- Pregunta 4 -->
                     <div class="question">
                         <label for="p4">4. ¿Te gustaría conocer la flora y la fauna de la región?</label>
@@ -75,7 +76,8 @@
                     </div>
                     <!-- Pregunta 6 -->
                     <div class="question">
-                        <label for="p6">6. ¿Te gustaría recibir sugerencias de bares, restaurantes o productos locales para probar durante la visita?</label>
+                        <label for="p6">6. ¿Te gustaría recibir sugerencias de bares, restaurantes o productos locales
+                            para probar durante la visita?</label>
                         <div class="rating-options">
                             <label><input type="radio" name="p6" value="1"> 1</label>
                             <label><input type="radio" name="p6" value="2"> 2</label>
@@ -87,10 +89,11 @@
                 </div>
 
                 <!-- Bloque 3: Preguntas 7-9 -->
-                <div class="question-block" style="display:none;">
+                <div id="group-3" class="question-block" style="display:none;">
                     <!-- Pregunta 7 -->
                     <div class="question">
-                        <label for="p7">7. ¿Te gustaría que el asistente virtual te ofrezca recomendaciones en tiempo real durante la ruta?</label>
+                        <label for="p7">7. ¿Te gustaría que el asistente virtual te ofrezca recomendaciones en tiempo
+                            real durante la ruta?</label>
                         <div class="rating-options">
                             <label><input type="radio" name="p7" value="1"> 1</label>
                             <label><input type="radio" name="p7" value="2"> 2</label>
@@ -111,11 +114,18 @@
                     </div>
                 </div>
 
+                <!-- Barra de progreso -->
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
                 <!-- Botones -->
                 <div class="buttons">
-                    <button type="button" id="prev-btn" class="prev-button" style="display:none;" onclick="showPrevBlock()">Anterior</button>
+                    <button type="button" id="prev-btn" class="prev-button" style="display:none;"
+                        onclick="showPrevBlock()">Anterior</button>
                     <button type="button" id="next-btn" class="next-button" onclick="showNextBlock()">Siguiente</button>
-                    <button type="submit" class="submit-button" id="submit-btn" style="display:none;" onclick="enviarRespuestas()">Enviar</button>
+                    <button type="submit" class="submit-button" id="submit-btn" style="display:none;"
+                        onclick="enviarRespuestas()">Enviar</button>
                 </div>
             </form>
         </div>
@@ -123,5 +133,5 @@
 
     <script src="../static/js/Preferencias.js"></script>
 </body>
-</html>
 
+</html>
