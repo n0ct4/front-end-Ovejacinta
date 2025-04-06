@@ -75,43 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!isValid) return;
         
-        try {
-            // enviar los datos al servidor
-            const response = await fetch('/api/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    firstName: formData.firstName,
-                    lastName: formData.lastName,
-                    email: formData.email,
-                    password: formData.password
-                })
-            });
-            
-            const data = await response.json();
-            
-            if (response.ok) {
-                // Mostrar mensaje de éxito
-                document.getElementById('successMessage').classList.remove('hidden');
-                
-                // Resetear el formulario
-                form.reset();
-                
-                // Ocultar el mensaje de éxito después de 3 segundos
-                setTimeout(() => {
-                    document.getElementById('successMessage').classList.add('hidden');
-                }, 3000);
-            } else {
-                // Mostrar mensaje de error
-                document.getElementById('errorMessage').textContent = data.error || 'Error al enviar el formulario';
-                document.getElementById('errorMessage').classList.remove('hidden');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            document.getElementById('errorMessage').classList.remove('hidden');
-        }
     });
     
     function showError(fieldId, message) {
