@@ -13,34 +13,53 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
     let comunidadA = document.getElementById("comunidad").value;
     let edad = parseInt(document.getElementById("edad").value);
     let categoria = document.getElementById("categoria").value || null;
-    // tipo id encio null por ahora
 
-    let data = { nombre: nombre, 
-                nombreUsuario: nombreUsuario, correo: email ,contraseña: contraseña, 
-        apellido1:apellido1, apellido2:apellido2, pais: pais, comunidadA: comunidadA, edad:edad, categoria:categoria
+    let data = { 
+        nombre: nombre, 
+        nombreUsuario: nombreUsuario, 
+        correo: email,
+        contraseña: contraseña, 
+        apellido1: apellido1, 
+        apellido2: apellido2, 
+        pais: pais, 
+        comunidadA: comunidadA, 
+        edad: edad, 
+        categoria: categoria
+    };
 
-     };
-
-     try {
+    try {
         const response = await fetch("http://localhost:5065/api/Auth/Registro", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data)
-        })
+        });
+        
         if (response.ok) {
-            document.getElementById("successMessage").classList.remove("hidden");
-            document.getElementById("errorMessage").classList.add("hidden");
+            // Mostrar mensaje de éxito
+            document.getElementById("successMessage").style.display = "block";
+            document.getElementById("errorMessage").style.display = "none";
+            
+            // Resetear formulario
             document.getElementById("registrationForm").reset();
-            window.location.href = "/login";
+            
+            // Esperar 3 segundos y redirigir
+            setTimeout(() => {
+                window.location.href = "/"; 
+            }, 3000);
+            
         } else {
-            throw new Error("Error en el servidor");
+            // Si la respuesta no es OK, mostrar error
+            const errorData = await response.json();
+            throw new Error(errorData.message || "Error en el servidor");
         }
         
     } catch (error) {
-        document.getElementById("successMessage").classList.add("hidden");
-        document.getElementById("errorMessage").classList.remove("hidden");
+        // Mostrar mensaje de error
+        document.getElementById("successMessage").style.display = "none";
+        document.getElementById("errorMessage").style.display = "block";
+        document.getElementById("errorMessage").textContent = error.message || "Error al enviar el formulario. Inténtalo de nuevo.";
         console.error("Error:", error);
     }
 });

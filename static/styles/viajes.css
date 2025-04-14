@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .sidebar {
     background-color: #fff;
     min-height: 100vh;
@@ -47,6 +51,31 @@
     padding: 2rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 2rem;
+}
+
+.viaje-card {
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.viaje-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.viaje-header {
+    background-color: #f0c897;
+    color: #333;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.viaje-body {
+    padding: 20px;
+}
+.badge-destino {
+    background-color: #b2844b;
+    color: white;
 }
 
 footer {

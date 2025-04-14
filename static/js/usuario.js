@@ -1,18 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtiene los datos del usuario almacenados
+    const authToken = localStorage.getItem('authToken'); 
+    
+    // Si no hay token, redirige a LOGIN
+    if (!authToken) {
+        window.location.href = "/";
+        return; 
+    }
+
+    // Si hay token carga los datos del usuario
     const userData = JSON.parse(localStorage.getItem('userData'));
     
     if (userData) {
-        // Actualiza el nombre en el sidebar
+        
         const sidebarNombre = document.querySelector('.sidebar h6');
         if (sidebarNombre) {
             sidebarNombre.textContent = userData.username || 'Usuario';
         }
         
-        // Actualiza el título de bienvenida
+        // Actualiza el titulo de bienvenida
         const tituloBienvenida = document.querySelector('.user-welcome h4');
         if (tituloBienvenida) {
-            welcomeTitle.textContent = `Bienvenido, ${userData.username || 'Usuario'}!`;
+            tituloBienvenida.textContent = `Bienvenido, ${userData.username || 'Usuario'}!`;
         }  
     } 
     

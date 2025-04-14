@@ -1,44 +1,67 @@
+.btn.btn-primary {
+    width: 100%;
+    background-color: #b2844b;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    font-weight: bold;
+    border: none;
+}
+
+.btn.btn-primary:hover {
+    background-color: #966c3a;
+}
+
+.btn.btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #b2844b;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-    background-color: red;
-}
-.container {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-form {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/puente.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 15px;
 }
-input, button {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-top: 40px;
+    width: 400px !important;
+    
 }
-button {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-}
-button:hover {
-    background-color: #45a049;
-}
-.response {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #e9f7ef;
-    border-radius: 4px;
+
+#errorMessage {
     display: none;
+    background-color: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #991B1B;
+    padding: 16px;
+    border-radius: 6px;
+    margin-top: 16px;
 }
-.error {
-    color: red;
-    margin-top: 10px;
+
+.form-control:focus {
+    border-color: #b2844b;
+    box-shadow: 0 0 0 2px #b2844b;
+    outline: none;
+}
+
+.redirect {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.redirect h3 {
+    font-size: 1rem;
+    color: #b2844b;
 }

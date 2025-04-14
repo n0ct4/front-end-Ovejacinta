@@ -10,6 +10,10 @@ api_url_registro = "http://localhost:5065/api/Auth/Registro"
 def index():
     return render_template('login.html')  
 
+@app.route('/form')
+def form():
+    return render_template('formulario-preferencias.html') 
+
 @app.route('/registroUsuario')
 def registroUsuario():
     return render_template('registro.html')  

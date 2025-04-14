@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ovejacinta | Viajes</title>
+    <title>Viajes | Ovejacinta</title>
     <link rel="stylesheet" src="../static/styles/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +18,7 @@
     <div class="row">
         <!-- Sidebar -->
         <div class="col-md-3 col-lg-2 sidebar p-0">
-            <div class="sidebar-brand">
+            <div class="sidebar-brand text-center">
                 <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Usuario"
                     class="rounded-circle mb-2 align-items" style="width: 80px; height: 80px;">
             </div>
@@ -68,12 +68,14 @@
                             </button>
                         </div>
                     </div>
+                    <!--
                     <div class="overflow-hidden" style="max-height: 30vh;">
                         <div class="container px-5">
                             <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4"
                                 alt="Example image" width="700" height="500" loading="lazy">
                         </div>
                     </div>
+                    -->
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -113,13 +115,73 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
 
+            
+
+            <div class="container py-4">
+                <h1 class="text-center mb-4"><i class="me-2"></i>Mis Viajes</h1>
+                
+                <!-- Lista -->
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Viaje 1 -->
+                        <div class="card viaje-card">
+                            <div class="card-header viaje-header d-flex justify-content-between align-items-center">
+                                <h3 class="card-title mb-0">Gastronomía en San Esteban de Gormaz</h3>
+                                <span class="badge badge-destino">España</span>
+                            </div>
+                            <div class="card-body viaje-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span class="text-muted"><i class="fas fa-calendar-alt me-2"></i>15-22 Junio 2025</span>
+                                    <span class="text-muted"><i class="fas fa-users me-2"></i>2 personas</span>
+                                </div>
+                                <p class="card-text">Explorando las maravillas gastronómicas de San Esteban</p>
+                                
+                                 
+                                
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-outline-danger btn-viaje me-2">
+                                        <i class="fas fa-trash me-1"></i> Eliminar
+                                    </button>
+                                    <button class="btn btn-primary btn-viaje">
+                                        <i class="fas fa-eye me-1"></i> Ver detalles
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5"></div>
+                        <!-- Viaje 2 -->
+                        <div class="card viaje-card">
+                            <div class="card-header viaje-header d-flex justify-content-between align-items-center">
+                                <h3 class="card-title mb-0">Escapada a San Esteban de Gormaz</h3>
+                                <span class="badge badge-destino">España</span>
+                            </div>
+                            <div class="card-body viaje-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span class="text-muted"><i class="fas fa-calendar-alt me-2"></i>10-15 Agosto 2025</span>
+                                    <span class="text-muted"><i class="fas fa-users me-2"></i>1 persona</span>
+                                </div>
+                                <p class="card-text">Fin de semana conociendo la historia de San Esteban de Gormaz</p>
+                                
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-outline-danger btn-viaje me-2">
+                                        <i class="fas fa-trash me-1"></i> Eliminar
+                                    </button>
+                                    <button class="btn btn-primary btn-viaje">
+                                        <i class="fas fa-eye me-1"></i> Ver detalles
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="mt-5"></div>
             </div>
-        </div>
 
 
-        <!-- Footer simple -->
+        
         <footer class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
