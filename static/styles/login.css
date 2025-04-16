@@ -1,6 +1,6 @@
 .btn.btn-primary {
     width: 100%;
-    background-color: #b2844b;
+    background-color: #60859a;
     padding: 8px 16px;
     border-radius: 6px;
     transition: background-color 0.2s;
@@ -8,13 +8,26 @@
     border: none;
 }
 
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+input {
+    border-color: #000
+}
+
+
 .btn.btn-primary:hover {
-    background-color: #966c3a;
+    background-color: #3f4f58;
 }
 
 .btn.btn-primary:focus {
     outline: none;
-    box-shadow: 0 0 0 4px #b2844b;
+    box-shadow: 0 0 0 4px #7ea3b9;
+}
+
+h4 {
+    text-align: center;
 }
 
 
@@ -33,7 +46,7 @@ body {
 .container {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     padding: 24px;
     margin-top: 40px;
     width: 400px !important;
@@ -63,5 +76,5 @@ body {
 
 .redirect h3 {
     font-size: 1rem;
-    color: #b2844b;
+    color: #2c353b;
 }

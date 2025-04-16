@@ -14,6 +14,10 @@ def index():
 def form():
     return render_template('formulario-preferencias.html') 
 
+@app.route('/perfil')
+def perfil():
+    return render_template('perfil.html') 
+
 @app.route('/registroUsuario')
 def registroUsuario():
     return render_template('registro.html')  
@@ -75,6 +79,9 @@ def registro():
 
     except Exception as e:
         return jsonify({"message": str(e)}), 500
+
+
+
 
         
 # viajes
