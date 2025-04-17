@@ -30,6 +30,10 @@ def cambioContraseña():
 def vista_usuario():
     return render_template('usuario.html')  
 
+@app.route('/turismo')
+def turismo():
+    return render_template('historia.html')  
+
 @app.route('/viajes')
 def viaje():
     return render_template('viajes.html')
