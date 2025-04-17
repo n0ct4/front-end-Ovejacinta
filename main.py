@@ -22,6 +22,10 @@ def perfil():
 def registroUsuario():
     return render_template('registro.html')  
 
+@app.route('/cambioContraseña')
+def cambioContraseña():
+    return render_template('cambio-contrasenia.html')  
+
 @app.route('/usuario')
 def vista_usuario():
     return render_template('usuario.html')  

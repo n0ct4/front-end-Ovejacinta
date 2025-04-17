@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+/**
+ * Funcion que se encarga de permitir cambiar los datos personales del usuario dentro de la pestaña de perfil
+ * Para poder cambiar los datos del usuario se debería de dar al botón de 'Save Profile'
+ * Se coleccionan todos los datos propios del turista desde los placeholders
+ */
 document.addEventListener('DOMContentLoaded', async function () {
     await new Promise(resolve => setTimeout(resolve, 2000));
     var btnPerfil = document.getElementById('btnCambioPerfil');
@@ -69,6 +74,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         const edad = document.querySelector('input[placeholder="Edad"]').value;
         const numeroViajes = document.querySelector('input[placeholder="Viajes"]').value
         
+        // Se manda a la API una solicitud de PUT con los datos recopilados previamente
+        // y se recarga la página si el evento ha sido exitoso
+
         try {
             let respuesta = await fetch("http://localhost:5065/api/Usuario", {
                 method: "PUT",
