@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 document.getElementById('btnGuardarViaje').addEventListener('click',
     async function () {
+        const userData = JSON.parse(localStorage.getItem('userData'));
         await crearViajeNuevo(userData.id)
     })
 
@@ -29,7 +30,8 @@ async function obtenerNombreTurista(id) {
 document.addEventListener('DOMContentLoaded', async function cargarViajes() {
 
     try {
-        const response = await fetch("http://localhost:5065/api/Viajes");
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        const response = await fetch(`http://localhost:5065/api/Viajes/Usuario/${userData.id}`);
         const data = await response.json();
         const viajes = data.contenido;
         const container = document.getElementById('viajesContainer');
@@ -79,8 +81,6 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
     }
 })
 
-
-
 async function crearViajeNuevo(usuario_id) {
 
     const nombreViaje = document.getElementById('nombreViaje').value;
@@ -96,10 +96,10 @@ async function crearViajeNuevo(usuario_id) {
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-                Nombre: nombreViaje,
-                fechaI: fechaInicio,
-                fechaFin: fechaFin,
-                idUsuario: usuario_id
+                nombre: nombreViaje,
+                fechaInicioViaje: fechaInicio,
+                fechaFinalViaje: fechaFin,
+                idTuristaCreador: usuario_id
             })
         })
         if (!response.ok) {
@@ -112,5 +112,10 @@ async function crearViajeNuevo(usuario_id) {
 }
 
 async function mostrarDetalleViaje() {
+    try {
 
+    }
+    catch (error) {
+
+    }
 }

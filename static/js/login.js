@@ -35,7 +35,8 @@ document
           "userData",
           JSON.stringify({
             username: data.user.nombreUsuario,
-            correo: data.user.Correo,
+            correo: data.user.correo,
+            id: data.user.id
           })
         );
 
