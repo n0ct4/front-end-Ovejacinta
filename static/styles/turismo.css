@@ -1,0 +1,356 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Diseño del contenedor y las filas */
+.container-fluid {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+    background-color: #ffffff;
+    min-height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-brand {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.sidebar-item {
+    padding: 0.75rem 1rem;
+    color: #555;
+    border-radius: 5px;
+    margin: 0.25rem 0.5rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+}
+
+.sidebar-item:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.sidebar-item.active {
+    background-color: #e9f5ff;
+    color: #0d6efd;
+}
+
+.sidebar-item i {
+    width: 20px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+/* Diseño fijo para la barra lateral */
+.col-md-3,
+.col-lg-2 {
+    width: 260px;
+    flex: 0 0 260px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.col-md-9,
+.col-lg-10 {
+    flex: 1;
+    margin-left: 260px;
+    /* Igual al ancho de la barra lateral */
+    width: calc(100% - 260px);
+}
+
+/* Perfil de usuario en la barra lateral */
+.text-center {
+    text-align: center;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+/* Estilos del contenido principal */
+.main-content {
+    padding: 30px 50px;
+    width: 100%;
+    background-color: #eeeeee;
+}
+
+/* Tipografía */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Georgia', serif;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    color: #333;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: #d4a76a;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+/* Justificación del texto en párrafos */
+p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Secciones del contenido */
+.main-content>div {
+    margin-bottom: 60px;
+}
+
+/* Estilos de las imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Diseño para las secciones históricas */
+.historia-section {
+    display: flex;
+    margin-bottom: 80px;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.historia-section-reverse {
+    flex-direction: row-reverse;
+}
+
+.historia-text {
+    flex: 1;
+}
+
+.historia-image {
+    flex: 1;
+}
+
+.historia-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* Navegación */
+.nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-3 {
+    padding: 1rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+
+    .historia-section,
+    .historia-section-reverse {
+        flex-direction: column;
+    }
+
+    .historia-image {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .col-md-3,
+    .col-lg-2 {
+        position: relative;
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .col-md-9,
+    .col-lg-10 {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .sidebar {
+        min-height: auto;
+    }
+}
+
+/* Carrusel */
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.Carrusel {
+    font-weight: bold;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+/* Galería de fotos */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    display: block;
+}
+
+/* Lightbox */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+#lightbox button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#lightbox .controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); 
+    display: flex;
+    gap: 10px;
+}
+
+#lightbox button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Ajusta las posiciones de los botones de navegación */
+#lightbox #prev {
+    position: relative;
+    left: -50px; 
+}
+
+#lightbox #next {
+    position: relative;
+    right: -50px; 
+}
+
+#lightbox #close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
