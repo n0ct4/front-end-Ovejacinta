@@ -22,13 +22,26 @@ def perfil():
 def registroUsuario():
     return render_template('registro.html')  
 
+@app.route('/cambioContraseña')
+def cambioContraseña():
+    return render_template('cambio-contrasenia.html')  
+
 @app.route('/usuario')
 def vista_usuario():
     return render_template('usuario.html')  
 
+@app.route('/turismo')
+def turismo():
+    return render_template('turismo.html')  
+
 @app.route('/viajes')
 def viaje():
     return render_template('viajes.html')
+
+
+@app.route('/contacto')
+def contacto():
+    return render_template('contacto.html')
 
 
 @app.route('/login', methods=['POST'])

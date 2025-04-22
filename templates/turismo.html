@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/img/Oveja_Guia_turistico_3.png">
+    <link rel="stylesheet" href="../static/styles/turismo.css">
+    <title>Conoce San Esteban de Gormaz</title>
+    <!-- Añadir Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar p-0">
+                <div class="sidebar-brand">
+                    <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Usuario"
+                        class="rounded-circle mb-2 align-items" style="width: 130px; height: 130px;">
+                </div>
+
+                <div class="p-3">
+                    <div class="text-center mb-4 mt-3">
+                        <img src="../static/img/images.jpg" alt="Usuario" class="rounded-circle mb-2"
+                            style="width: 80px; height: 80px;">
+                        <h6 class="mb-0" id=""></h6>
+                        <small class="text-muted">Turista</small>
+                    </div>
+
+                    <nav class="nav flex-column">
+                        <a href="./usuario" class="sidebar-item">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <i class="fas fa-user"></i> Perfil
+                        </a>
+                        <a href="./viajes" class="sidebar-item">
+                            <i class="fas fa-file-alt"></i> Viajes
+                        </a>
+                        <a href="historia.html" class="sidebar-item active">
+                            <i class="fas fa-suitcase"></i> Turismo
+                        </a>
+                        <a href="/contacto" class="sidebar-item">
+                            <i class="fas fa-envelop"></i> Contacto
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <i class="fas fa-sign-out-alt"></i> Salir
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Contenido principal -->
+            <main class="col-md-9 col-lg-10 main-content">
+                <div class="container py-4">
+                    <h1 class="mb-4 text-center">Conoce un poco más San Esteban de Gormaz</h1>
+                    <section>
+                        <div id="carouselExampleCaptions" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="../static/img/Carrusel1.jpg" class="d-block w-100"
+                                        alt="Iglesia de San Esteban de Gormaz">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../static/img/Carrusel2.jpg" class="d-block w-100"
+                                        alt="Vista de tejados y castillo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../static/img/puente.jpg" class="d-block w-100"
+                                        alt="Puente de San Esteban de Gormaz">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="row align-items-center mb-5">
+                            <div class="col-lg-6">
+                                <h2>Ubicación y contexto histórico</h2>
+                                <p>San Esteban de Gormaz es una localidad medieval situada en la provincia de Soria,
+                                    Castilla y León, conocida por su rico patrimonio histórico y cultural. Se encuentra
+                                    en la Ruta de la Lana y el Camino del Cid, dos itinerarios de gran importancia
+                                    histórica que atraviesan España. Su estratégica ubicación a orillas del río Duero, a
+                                    unos 70 kilómetros de la capital soriana, la convirtió en un punto clave para los
+                                    asentamientos humanos desde la prehistoria. A lo largo de los siglos, la región fue
+                                    ocupada por romanos y árabes, quienes dejaron un legado arquitectónico y cultural
+                                    que aún perdura. En 1995, San Esteban de Gormaz fue declarada Conjunto
+                                    Histórico-Artístico, lo que destaca la relevancia de su patrimonio y la necesidad de
+                                    su preservación.</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="../static/img/Castillo.jpg" alt="Castillo de San Esteban de Gormaz"
+                                    class="img-fluid rounded shadow">
+                                <p class="text-center mt-2 text-muted"><small>Castillo de San Esteban de Gormaz</small>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center mb-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <h2>Patrimonio arquitectónico</h2>
+                                <ul>
+                                    <li class="Carrusel">
+                                        Castillo del siglo X
+                                    </li>
+                                    <p>
+                                        Era un punto estratégico que controlaba el puente y el paso por el río Duero. En
+                                        el siglo XI, bajo el reinado de García I de León, el castillo fue reforzado y
+                                        repoblado, consolidando su papel como bastión cristiano.
+                                    </p>
+                                    <li class="Carrusel">
+                                        Puente Medieval
+                                    </li>
+                                    <p>
+                                        Se cree está basado en una estructura romana anterior, fue esencial en la
+                                        historia de la localidad. El puente marcaba la frontera entre territorios
+                                        cristianos y musulmanes, sirviendo como un nexo crucial para las comunicaciones
+                                        y el acceso a las tierras del sur.
+                                    </p>
+                                    <li class="Carrusel">
+                                        Iglesia Nuestra Señora del Rivero
+                                    </li>
+                                    <p>
+                                        Ubicada en un altozano con vistas a la Ribera del Duero, esta iglesia románica
+                                        comenzó a construirse en el siglo XII, posiblemente sobre las ruinas de un
+                                        templo anterior.
+                                    </p>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <img src="../static/img/iglesia.jpg" alt="Iglesia de San Miguel"
+                                    class="img-fluid rounded shadow">
+                                <p class="text-center mt-2 text-muted"><small>Iglesia de San Miguel, ejemplo del
+                                        románico soriano</small></p>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <h2>Ejes y edificaciones urbanas</h2>
+                                <ul>
+                                    <li class="Carrusel">
+                                        Calle Mayor
+                                    </li>
+                                    <p>
+                                        Es el eje vertebrador de la localidad, conectando las principales áreas
+                                        históricas y modernas. Atravesando la Plaza Mayor y dirigiéndose hacia el Oeste,
+                                        la Calle Mayor alberga las casas más ilustres de San Esteban, adornadas con
+                                        escudos que reflejan el linaje y la nobleza de las familias que las habitaron.
+                                    </p>
+                                    <li class="Carrusel">
+                                        Cubo de la Puerta de San Gregorio
+                                    </li>
+                                    <p>
+                                        Construido en el siglo IX por los musulmanes, este cubo defensivo es una torre
+                                        de nueve metros de altura y cinco metros y medio de diámetro. Formaba parte de
+                                        la muralla que rodeaba la villa y tenía la función de proteger a los aldeanos de
+                                        las invasiones frecuentes.
+                                    </p>
+                                    <li class="Carrusel">
+                                        Torreón
+                                    </li>
+                                    <p>
+                                        Situado en la calle Posadillas, este torreón también formaba parte del sistema
+                                        defensivo de San Esteban de Gormaz. Su presencia era vital para garantizar la
+                                        seguridad de la villa durante épocas de conflicto
+                                    </p>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="../static/img/Plaza_mayor.jpg" alt="Plaza Mayor de San Esteban de Gormaz"
+                                    class="img-fluid rounded shadow">
+                                <p class="text-center mt-2 text-muted"><small>Plaza Mayor porticada de San Esteban de
+                                        Gormaz</small></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="row align-items-center">
+                            <h2>Puntos de interés</h2>
+                            <div class="row gallery">
+                                <div class="image-grid">
+                                    <img src="../static/img/puente_medieval.jpg" alt="Puente medieval">
+                                    <img src="../static/img/parque-romanico.jpg" alt="Parque románico">
+                                    <img src="../static/img/plaza.jpg" alt="Plaza">
+                                    <img src="../static/img/iglesea-atardecer.jpg" alt="Iglesia con atardecer">
+                                    <img src="../static/img/Paisaje.jpg" alt="Paisaje de San Esteban">
+                                    <img src="../static/img/iglesia-frontal.jpg" alt="Iglesia vista frontal">
+                                    <img src="../static/img/plaza_mayor_decorada.jpg" alt="Plaza mayor decorada">
+                                    <img src="../static/img/Castillo.jpg" alt="Castillo">
+                                    <img src="../static/img/cabezudos.jpg" alt="Cabezudos">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/turismo.js"></script>
+</body>
+
+</html>

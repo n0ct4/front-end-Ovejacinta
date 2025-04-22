@@ -36,7 +36,8 @@ document
           JSON.stringify({
             id_u: data.user.id, // pruba para comprobar id 
             username: data.user.nombreUsuario,
-            correo: data.user.Correo,
+            correo: data.user.correo,
+            id: data.user.id
           })
         );
 
