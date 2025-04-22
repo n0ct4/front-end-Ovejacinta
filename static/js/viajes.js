@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
 
             const card = document.createElement('div');
             card.className = 'col-md-6 mb-4';
-            card.innerHTML = `
+            card.innerHTML =` 
                         <div class="card viaje-card">
                             <div class="card-header viaje-header d-flex justify-content-between align-items-center">
                                 <h3 class="card-title mb-0">${viaje.nombre}</h3>
@@ -70,14 +70,16 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
                                 </div>
                             </div>
                         </div>
-                    `;
+                        `
+                    ;
             container.appendChild(card);
         });
     }
     catch (error) {
         console.log("Error:", error);
     }
-})
+});
+
 
 
 
