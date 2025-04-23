@@ -33,13 +33,13 @@
                         <a href="../usuario" class="sidebar-item">
                             <i class="fas fa-home"></i> Inicio
                         </a>
-                        <a href="../perfil" class="sidebar-item">
+                        <a href="./perfil" class="sidebar-item">
                             <i class="fas fa-user"></i> Perfil
                         </a>
                         <a href="../viajes" class="sidebar-item">
                             <i class="fas fa-file-alt"></i> Viajes
                         </a>
-                        <a href="#" class="sidebar-item">
+                        <a href="../turismo" class="sidebar-item">
                             <i class="fas fa-suitcase"></i> Turismo
                         </a>
                         <a href="../contacto" class="sidebar-item active">
@@ -57,18 +57,20 @@
             <!-- Contenido principal -->
             <main class="col-md-9 col-lg-10 main-content">
 
-                <div class="card user-welcome">
-                    <h1 style="text-align: center;" >Sobre Nostros</h1>
+                <div class="user-welcome">
+                    <h1 style="text-align: center;">Sobre Nostros</h1>
                 </div>
-                <div class="card row mb-3 sobreNosotros">
+                <div class="row mb-3 sobreNosotros">
 
                     <div class="row img-text">
                         <div class="col-md-6">
                             <h3 style="text-align: center;">¿Quienes Somos?</h3>
-                            <p> 
-                                Somos un grupo de estudiantes de la Universidad Francisco Vitoria, formado por Miguel Rámirez
-                                Ochoa, Javier Argenta Cañas, Pablo Touza Juristo, Ana Gárcia Nuñez y Diego Vázquez Morales, los cuales
-                                nos hemos unido para realizar la creación de esta aplicación. 
+                            <p>
+                                Somos un grupo de estudiantes de la Universidad Francisco Vitoria, formado por Miguel
+                                Rámirez
+                                Ochoa, Javier Argenta Cañas, Pablo Touza Juristo, Ana Gárcia Nuñez y Diego Vázquez
+                                Morales, los cuales
+                                nos hemos unido para realizar la creación de esta aplicación.
                             </p>
                         </div>
                         <div class="col-md-6">
@@ -77,16 +79,19 @@
                     </div>
                     <div class="row mb-3 img-text">
                         <div class="col-md-6">
-                            <img id="imagenAlcalde"src="../static/img/ImagenAlcaladeSanEsteban.jpg">
+                            <img id="imagenAlcalde" src="../static/img/ImagenAlcaladeSanEsteban.jpg">
                         </div>
                         <div class="col-md-6">
                             <h3 style="text-align: center;">¿Porque creamos esta aplicación?</h3>
-                            <p> 
-                                Nuestra aplicación se creó como respuesta a un reto propuesto por el ayuntamiento de San Esteban de Gormaz a los alumnos de la Universidad. 
-                                El reto consistía en la realización de un proyecto que beneficiara a dicho pueblo. 
+                            <p>
+                                Nuestra aplicación se creó como respuesta a un reto propuesto por el ayuntamiento de San
+                                Esteban de Gormaz a los alumnos de la Universidad.
+                                El reto consistía en la realización de un proyecto que beneficiara a dicho pueblo.
                                 <br>
-                                En nuestro caso, diseñamos una solución para resolver un problema recurrente en San Esteban de Gormaz: la
-                                 falta de turistas en el pueblo. Para ello, diseñamos una solución que permitiese fomentar el crecimiento de la economía local y 
+                                En nuestro caso, diseñamos una solución para resolver un problema recurrente en San
+                                Esteban de Gormaz: la
+                                falta de turistas en el pueblo. Para ello, diseñamos una solución que permitiese
+                                fomentar el crecimiento de la economía local y
                                 dar visibilidad al rico patrimonio histórico, cultural y natural del municipio
 
                             </p>
@@ -97,19 +102,21 @@
                         <div class="col-md-6">
                             <h3 style="text-align: center;">¿En que consiste nuestra solución?</h3>
                             <p>
-                                Para lograr esto, nuestra solución consiste en un asistente turístico virtual, el cual ofrece rutas turísticas personalizadas 
-                                para cada viajero, que se generan a partir de los gustos de los turistas. Estas rutas turísticas contienen puntos de interés, los cuales 
+                                Para lograr esto, nuestra solución consiste en un asistente turístico virtual, el cual
+                                ofrece rutas turísticas personalizadas
+                                para cada viajero, que se generan a partir de los gustos de los turistas. Estas rutas
+                                turísticas contienen puntos de interés, los cuales
                                 permiten a los visitantes conocer la gastronomía y el patrimonio del pueblo.
-                                
-                            </p> 
+
+                            </p>
                         </div>
                         <div class="col-md-6">
                             <img src="../static/img/Oveja_Guia_turistico_3.png" id="imagenGuia">
                         </div>
-                    </div>   
+                    </div>
                 </div>
 
-                <div class="card row mb-3">
+                <div class="row mb-3 contacto">
                     <h1 style="text-align: center;">Contáctanos</h1>
                     <h2 class="subtituloContacto">Haznos saber tus dudas</h2>
                     <!--Formulario-->
@@ -129,8 +136,8 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="input-group">
-                                    <input type="tel" id="telefono" class="form-control"
-                                        placeholder="+34-999-999-999" list="tel-options" required>
+                                    <input type="tel" id="telefono" class="form-control" placeholder="+34-999-999-999"
+                                        list="tel-options" required>
                                     <datalist id="tel-options">
                                         <option value="+34"></option>
                                         <option value="+1"></option>
@@ -139,14 +146,13 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control"
-                                    placeholder="ejemplo@correo.com" required>
+                                <input type="email" class="form-control" placeholder="ejemplo@correo.com" required>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-12">
-                                <input type="text" class="form-control" placeholder="Asunto" >
+                                <input type="text" class="form-control" placeholder="Asunto">
                             </div>
                         </div>
 
@@ -157,28 +163,35 @@
                             </div>
                         </div>
 
-                            <button type="submit" id="botonEnviar" class="btn btn-primary" style="align-items: center;">Enviar</button>
+                        <button type="submit" id="botonEnviar" class="btn btn-primary"
+                            style="align-items: center;">Enviar</button>
                     </form>
                 </div>
 
             </main>
+
+
+            <!-- Footer simple -->
+            <footer class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="text-muted">© 2025 Ovejacinta. Todos los derechos reservados.</span>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#" class="text-decoration-none text-muted me-3">Términos</a>
+                        <a href="#" class="text-decoration-none text-muted me-3">Privacidad</a>
+                        <a href="#" class="text-decoration-none text-muted">Contacto</a>
+                    </div>
+                </div>
+            </footer>
+
+
+
         </div>
     </div>
 
 
-    <!-- Footer simple -->
-    <footer class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <span class="text-muted">© 2025 Ovejacinta. Todos los derechos reservados.</span>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <a href="#" class="text-decoration-none text-muted me-3">Términos</a>
-                <a href="#" class="text-decoration-none text-muted me-3">Privacidad</a>
-                <a href="#" class="text-decoration-none text-muted">Contacto</a>
-            </div>
-        </div>
-    </footer>
+
 
     <script src="../static/js/usuario.js"></script>
     <script src="../static/js/perfil.js"></script>
