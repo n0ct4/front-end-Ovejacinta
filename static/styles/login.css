@@ -1,6 +1,7 @@
 .btn.btn-primary {
     width: 100%;
-    background-color: #60859a;
+    color: #000;
+    background-color: #b6dcff;
     padding: 8px 16px;
     border-radius: 6px;
     transition: background-color 0.2s;
@@ -8,8 +9,8 @@
     border: none;
 }
 
-.navbar {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+.custom-navbar{
+    background-color: rgb(226, 250, 253);
 }
 
 input {
@@ -18,12 +19,13 @@ input {
 
 
 .btn.btn-primary:hover {
-    background-color: #3f4f58;
+    background-color: #a9d0ff;
+    color: #000;
 }
 
 .btn.btn-primary:focus {
     outline: none;
-    box-shadow: 0 0 0 4px #7ea3b9;
+    box-shadow: 0 0 0 4px #88adc3;
 }
 
 h4 {
@@ -34,7 +36,7 @@ h4 {
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../img/puente.jpg");
+    background-image: url("../img/solucion.jpg");
     background-size: cover;
     background-position: center;
     min-height: 100vh;
