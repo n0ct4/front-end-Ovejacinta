@@ -218,12 +218,9 @@ async function eliminarViaje(viajeId) {
             })
         });
 
-        if (response.ok) {
-
-            cargarViajes();
-            window.location.reload();
-        }
     } catch (error) {
         console.error('Error:', error);
     }
+
+    window.location.reload();
 }
