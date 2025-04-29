@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
                                     <span class="text-muted"><i class="fas fa-calendar-alt me-2"></i>${fechaInicio} - ${fechaFin}</span>
                                     <span class="text-muted"><i class="fas fa-users me-2"></i>${nombreTurista}</span>
                                 </div>
-                                <p class="card-text">Sin descripción aún.</p>
+                                <p class="card-text">${viaje.descripcion}</p>
     
                                 <div class="d-flex justify-content-end">
                                     <button class="btn btn-outline-danger btn-viaje me-2" onclick="eliminarViaje(${viaje.id})">
@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
 async function crearViajeNuevo(usuario_id) {
 
     const nombreViaje = document.getElementById('nombreViaje').value;
+    const descripcion = document.getElementById('descripcionViaje').value;
     const fechaInicio = document.getElementById('fechaInicio').value;
     const fechaFin = document.getElementById('fechaFin').value;
 
@@ -101,6 +102,7 @@ async function crearViajeNuevo(usuario_id) {
             },
             body: JSON.stringify({
                 nombre: nombreViaje,
+                descripcion: descripcion,
                 fechaInicioViaje: fechaInicio,
                 fechaFinalViaje: fechaFin,
                 idTuristaCreador: usuario_id
@@ -160,7 +162,7 @@ function mostrarDetalleEnModal(viaje) {
                                 <p><strong>Fecha de inicio:</strong> ${fechaInicio}</p>
                                 <p><strong>Fecha de fin:</strong> ${fechaFin}</p>
                                 <p><strong>País:</strong> ${viaje.turista.pais}</p>
-                                <p><strong>Descripcion:</strong> puto el que lo lea</p>
+                                <p><strong>Descripcion:</strong> ${viaje.descripcion}</p>
                             </div>
                             <div class="col-md-6">
                                 <h5>Información del turista</h5>
@@ -206,6 +208,7 @@ async function eliminarViaje(viajeId) {
             body: JSON.stringify({
                 id: viajeId,
                 nombre: "", // Estos campos pueden ser requeridos por el modelo
+                descripcion: "",
                 fechaInicioViaje: "2025-04-29T00:00:00Z", // Valor por defecto
                 fechaFinalViaje: "2025-04-29T00:00:00Z", // Valor por defecto
                 idTuristaCreador: 0 // Valor por defecto
