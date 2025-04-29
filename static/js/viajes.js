@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 });
 
-document.getElementById('btnGuardarViaje').addEventListener('click',
+document.getElementById("btnGuardarViaje").addEventListener("click",
     async function () {
         const userData = JSON.parse(localStorage.getItem('userData'));
-        await crearViajeNuevo(userData.id)
+        await crearViajeNuevo(userData.id);
+        console.log("Viaje creado");
+        window.location.reload();
     })
 
 // document.getElementById('btnDetallesViaje').addEventListener('click',
@@ -104,8 +106,8 @@ async function crearViajeNuevo(usuario_id) {
                 idTuristaCreador: usuario_id
             })
         })
-        if (!response.ok) {
-            throw new Error("Error al crear el viaje");
+        if (response.ok) {
+            console.log("Viaje creado");
         }
     } catch (error) {
         console.log("Error:", error);
@@ -113,11 +115,109 @@ async function crearViajeNuevo(usuario_id) {
     }
 }
 
-async function mostrarDetalleViaje() {
+async function verDetalles(viajeId) {
     try {
+        const token = localStorage.getItem('authToken');
+        
+        const response = await fetch(`http://localhost:5065/api/Viajes/Detail?idViaje=${viajeId}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'accept': '*/*'
+            }
+        });
 
+        if (!response.ok) {
+            throw new Error('Error al obtener los detalles del viaje');
+        }
+        
+        const result = await response.json();
+
+        const viajeDetalle = result.contenido;
+
+        mostrarDetalleEnModal(viajeDetalle);
+        
+    } catch (error) {
+        console.error('Error al obtener detalles del viaje:', error);
+        alert('No se pudieron cargar los detalles del viaje: ' + error.message);
     }
-    catch (error) {
+}
 
+function mostrarDetalleEnModal(viaje) {
+    const fechaInicio = new Date(viaje.fechaInicioViaje).toLocaleDateString('es-ES');
+    const fechaFin = new Date(viaje.fechaFinalViaje).toLocaleDateString('es-ES');
+
+    const modalContent = `
+        <div class="modal fade" id="detalleViajeModal" tabindex="-1" aria-labelledby="detalleViajeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detalleViajeModalLabel">${viaje.nombre}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Fecha de inicio:</strong> ${fechaInicio}</p>
+                                <p><strong>Fecha de fin:</strong> ${fechaFin}</p>
+                                <p><strong>País:</strong> ${viaje.turista.pais}</p>
+                                <p><strong>Descripcion:</strong> puto el que lo lea</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Información del turista</h5>
+                                <p><strong>Creado por:</strong> ${viaje.turista.nombre} ${viaje.turista.apellido1}</p>
+                                <p><strong>Edad:</strong> ${viaje.turista.edad}</p>
+                                <p><strong>Comunidad Autónoma:</strong> ${viaje.turista.comunidadAutonoma}</p>
+                                <p><strong>Total viajes:</strong> ${viaje.turista.numeroViajes}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Agregar el modal al DOM
+    document.body.insertAdjacentHTML('beforeend', modalContent);
+
+    const modal = new bootstrap.Modal(document.getElementById('detalleViajeModal'));
+    modal.show();
+
+    document.getElementById('detalleViajeModal').addEventListener('hidden.bs.modal', function() {
+        this.remove();
+    });
+}
+
+async function eliminarViaje(viajeId) {
+    try {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            throw new Error('No autenticado');
+        }
+
+        const response = await fetch(`http://localhost:5065/api/Viajes`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                id: viajeId,
+                nombre: "", // Estos campos pueden ser requeridos por el modelo
+                fechaInicioViaje: "2025-04-29T00:00:00Z", // Valor por defecto
+                fechaFinalViaje: "2025-04-29T00:00:00Z", // Valor por defecto
+                idTuristaCreador: 0 // Valor por defecto
+            })
+        });
+        
+        if (response.ok) {
+            
+            cargarViajes();
+            window.location.reload();
+        }
+    } catch (error) {
+        console.error('Error:', error);
     }
 }
