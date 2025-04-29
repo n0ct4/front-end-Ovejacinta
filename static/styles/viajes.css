@@ -54,28 +54,36 @@ body {
 }
 
 .viaje-card {
-    transition: transform 0.3s ease;
+    background-color: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
+    width: 100%;             
+    padding: 24px;           
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 .viaje-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
+
 .viaje-header {
     background-color: #f0c897;
     color: #333;
     padding: 15px;
     border-bottom: 1px solid #ddd;
 }
+
 .viaje-body {
     padding: 20px;
 }
+
 .badge-destino {
-    background-color: #b2844b;
-    color: white;
+    font-size: 0.75rem;
+    background-color: #f0e3d8;
+    color: #5a4533;
 }
 
 footer {

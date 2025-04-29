@@ -29,6 +29,13 @@ async function obtenerNombreTurista(id) {
     }
 }
 
+/**
+ * Función que se encarga de cargar los viajes
+ * de cada turista en el html desde una llamada a la API.
+ * Muestra una card con el contenido de cada viaje que se destaca por:
+ * Titulo, descripcion, creador del viaje, etc
+ * Permite además acceder a las funciones de borrar y mostrar detalles del viaje
+ */
 document.addEventListener('DOMContentLoaded', async function cargarViajes() {
 
     try {
@@ -50,32 +57,28 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
             const nombreTurista = await obtenerNombreTurista(viaje.idTuristaCreador);
 
             const card = document.createElement('div');
-            card.className = 'col-md-6 mb-4';
-            card.innerHTML =` 
-                        <div class="card viaje-card">
-                            <div class="card-header viaje-header d-flex justify-content-between align-items-center">
-                                <h3 class="card-title mb-0">${viaje.nombre}</h3>
-                                <span class="badge badge-destino">España</span>
-                            </div>
-                            <div class="card-body viaje-body">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <span class="text-muted"><i class="fas fa-calendar-alt me-2"></i>${fechaInicio} - ${fechaFin}</span>
-                                    <span class="text-muted"><i class="fas fa-users me-2"></i>${nombreTurista}</span>
-                                </div>
-                                <p class="card-text">${viaje.descripcion}</p>
-    
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn btn-outline-danger btn-viaje me-2" onclick="eliminarViaje(${viaje.id})">
-                                        <i class="fas fa-trash me-1"></i> Eliminar
-                                    </button>
-                                    <button class="btn btn-primary btn-viaje" onclick="verDetalles(${viaje.id})">
-                                        <i class="fas fa-eye me-1"></i> Ver detalles
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        `
-                    ;
+            card.className = 'mb-4';
+            card.innerHTML = `
+                <div class="card viaje-card shadow-sm rounded-4 border-0 p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-semibold text-dark m-0">${viaje.nombre}</h4>
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">España</span>
+                    </div>
+                    <div class="d-flex justify-content-between text-muted small mb-3">
+                        <div><i class="fas fa-calendar-alt me-2"></i>${fechaInicio} - ${fechaFin}</div>
+                        <div><i class="fas fa-users me-2"></i>${nombreTurista}</div>
+                    </div>
+                    <p class="text-secondary mb-4">${viaje.descripcion}</p>
+                    <div class="d-flex justify-content-end gap-2">
+                        <button class="btn btn-outline-danger rounded-pill px-3" onclick="eliminarViaje(${viaje.id})">
+                            <i class="fas fa-trash me-1"></i>Eliminar
+                        </button>
+                        <button class="btn btn-primary rounded-pill px-3" onclick="verDetalles(${viaje.id})">
+                            <i class="fas fa-eye me-1"></i>Ver detalles
+                        </button>
+                    </div>
+                </div>
+            `;
             container.appendChild(card);
         });
     }
@@ -120,7 +123,7 @@ async function crearViajeNuevo(usuario_id) {
 async function verDetalles(viajeId) {
     try {
         const token = localStorage.getItem('authToken');
-        
+
         const response = await fetch(`http://localhost:5065/api/Viajes/Detail?idViaje=${viajeId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -131,13 +134,13 @@ async function verDetalles(viajeId) {
         if (!response.ok) {
             throw new Error('Error al obtener los detalles del viaje');
         }
-        
+
         const result = await response.json();
 
         const viajeDetalle = result.contenido;
 
         mostrarDetalleEnModal(viajeDetalle);
-        
+
     } catch (error) {
         console.error('Error al obtener detalles del viaje:', error);
         alert('No se pudieron cargar los detalles del viaje: ' + error.message);
@@ -180,14 +183,14 @@ function mostrarDetalleEnModal(viaje) {
             </div>
         </div>
     `;
-    
+
     // Agregar el modal al DOM
     document.body.insertAdjacentHTML('beforeend', modalContent);
 
     const modal = new bootstrap.Modal(document.getElementById('detalleViajeModal'));
     modal.show();
 
-    document.getElementById('detalleViajeModal').addEventListener('hidden.bs.modal', function() {
+    document.getElementById('detalleViajeModal').addEventListener('hidden.bs.modal', function () {
         this.remove();
     });
 }
@@ -214,9 +217,9 @@ async function eliminarViaje(viajeId) {
                 idTuristaCreador: 0 // Valor por defecto
             })
         });
-        
+
         if (response.ok) {
-            
+
             cargarViajes();
             window.location.reload();
         }
