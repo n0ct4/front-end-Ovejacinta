@@ -195,6 +195,11 @@ function mostrarDetalleEnModal(viaje) {
     });
 }
 
+/**
+ * Función que se encarga de eliminar un viaje en base a un id pasado
+ * al final del borrado recarga la página
+ * @param {*} viajeId Id del viaje que se va a borrar
+ */
 async function eliminarViaje(viajeId) {
     try {
         const token = localStorage.getItem('authToken');
