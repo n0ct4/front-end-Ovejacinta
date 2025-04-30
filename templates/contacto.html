@@ -33,7 +33,7 @@
                         <a href="../usuario" class="sidebar-item">
                             <i class="fas fa-home"></i> Inicio
                         </a>
-                        <a href="./perfil" class="sidebar-item">
+                        <a href="../perfil" class="sidebar-item">
                             <i class="fas fa-user"></i> Perfil
                         </a>
                         <a href="../viajes" class="sidebar-item">
@@ -121,44 +121,36 @@
                     <h2 class="subtituloContacto">Haznos saber tus dudas</h2>
                     <!--Formulario-->
                     <form id="contact-form" action="https://postman-echo.com/post" method="POST">
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Nombre" required>
+                                <input type="text" class="form-control datosUsuario" placeholder="Nombre" required>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="1º Apellido" required>
+                                <input type="text" class="form-control  datosUsuario" placeholder="1º Apellido" required>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="2º Apellido" required>
+                                <input type="text" class="form-control datosUsuario" placeholder="2º Apellido" required>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <div class="input-group">
-                                    <input type="tel" id="telefono" class="form-control" placeholder="+34-612-612-612"
-                                        list="tel-options" required>
-                                    <datalist id="tel-options">
-                                        <option value="+34"></option>
-                                        <option value="+1"></option>
-                                        <option value="+44"></option>
-                                    </datalist>
-                                </div>
+                                <input type="tel" class="form-control telefono" placeholder="+34-612-612-612" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                                <input type="email" class="form-control email" placeholder="ejemplo@correo.com" required>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-12">
-                                <input type="text" class="form-control" placeholder="Asunto">
+                                <input type="text" class="form-control Asunto" placeholder="Asunto">
                             </div>
                         </div>
 
                         <div class="row mb-4">
                             <div class="col-12">
-                                <textarea id="mensaje" name="mensaje" class="form-control" rows="4"
+                                <textarea class="form-control mensaje" rows="4"
                                     placeholder="Escibre aqui tu mensaje..." required></textarea>
                             </div>
                         </div>

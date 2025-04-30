@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!userData) {
         window.location.href = "/login";
     }
-
 });
 
 /**
@@ -97,4 +96,18 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert(error.message);
         }
     })
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('menu-boton');
+    const sidebar = document.getElementById('sidebar');
+
+    // Añade la clase "minimized" para que inicie minimizado
+    sidebar.classList.add('minimized');
+
+    toggleButton.addEventListener('click', function () {
+        sidebar.classList.toggle('minimized');
+        
+    });
+
 });

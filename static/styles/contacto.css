@@ -86,20 +86,13 @@ footer {
     }
 }
 
-    input.form-control,
-    textarea.form-control {
-        border: none;
-        border-bottom: 3px solid  #5b9bd5; 
-        border-radius: 0;
-        outline: none;
-        box-shadow: none;
-        background-color: transparent;
-    }
+/*estilo para el formulario de contacto*/
 
     input.form-control:focus,
     textarea.form-control:focus {
-        border-bottom: 2px solid #000; /* azul más oscuro al hacer focus */
+        border: 2px solid #000; /* azul más oscuro al hacer focus */
         box-shadow: none;
+        
     }
 
     .form-control::placeholder {
@@ -111,10 +104,16 @@ footer {
     }
 
     .form-control:hover {
-        border-bottom: 6px solid #000;
+        border: 3px solid #000;
     }
 
 @media(min-width: 1000px) {
+
+    .contacto {
+        padding-left: 20%;
+        padding-right: 20%;
+
+    }
     .sobreNosotros {
         margin-bottom: 4%;
         padding-left: 8%;
@@ -152,13 +151,12 @@ footer {
     }
 
     .subtituloContacto {
+        border-radius: 7px;
         text-align: center;
-        background-color: #5b9bd5; /* El color de fondo */
-        color: white; /* Color del texto */
         display: inline; /* Clave para que solo ocupe el tamaño del texto */
         font-weight: bold;
-        width: 33%;
-        margin-left: 34%;
+        width: 51%;
+        margin-left: 24%;
         margin-top: 2%;
         margin-bottom: 7%;
     }
@@ -170,6 +168,27 @@ footer {
 
     #botonEnviar:Hover {
         background-color: #3f4f58;
+    }
+
+    /*Tamaño de las cajas*/
+    input.datosUsuario {
+        width:109%;   
+    }
+
+    input.telefono {
+        width: 106%;
+    }
+    
+    input.email {
+        width: 106%;
+    }
+
+    input.Asunto {
+        width: 103%;
+    }
+
+    textarea.mensaje {
+        width: 103%;
     }
 
 }
