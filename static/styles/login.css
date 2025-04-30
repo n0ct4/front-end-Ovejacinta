@@ -1,16 +1,13 @@
 .btn.btn-primary {
     width: 100%;
     color: #000;
-    background-color: #b6dcff;
+    /* background-color: #b6dcff; */
+    background-color: #5ccae5;
     padding: 8px 16px;
     border-radius: 6px;
     transition: background-color 0.2s;
     font-weight: bold;
     border: none;
-}
-
-.custom-navbar{
-    background-color: rgb(226, 250, 253);
 }
 
 input {
@@ -19,7 +16,8 @@ input {
 
 
 .btn.btn-primary:hover {
-    background-color: #a9d0ff;
+    /* background-color: #a9d0ff; */
+    background-color: #5ccae5;
     color: #000;
 }
 
@@ -36,7 +34,8 @@ h4 {
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../img/solucion.jpg");
+    background: #47e3ff;
+    background: linear-gradient(0deg, rgba(0, 217, 255, 1) 0%, rgba(128, 247, 255, 1) 50%, rgba(219, 255, 255, 1) 100%);
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -52,7 +51,7 @@ body {
     padding: 24px;
     margin-top: 40px;
     width: 400px !important;
-    
+
 }
 
 #errorMessage {
