@@ -2,7 +2,8 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #77a5c0;
+    /* background-color: #77a5c0; */
+    background-image: url('../img/solucion.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -86,22 +87,22 @@ button {
 
 .next-button,
 .prev-button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #b1daff;
+    color: black;
 }
 
 .next-button:hover,
 .prev-button:hover {
-    background-color: #45a049;
+    background-color: #b1daff;
 }
 
 .submit-button {
-    background-color: #2196F3;
-    color: white;
+    background-color: #b1daff;
+    color: black;
 }
 
 .submit-button:hover {
-    background-color: #1976D2;
+    background-color: #b1daff;
 }
 
 .progress-container {
@@ -113,7 +114,7 @@ button {
 
 .progress-bar {
     height: 100%;
-    background-color: #4caf50;
+    background-color: #5eceff;
     width: 0%;
     transition: width 0.5s ease;
 }
