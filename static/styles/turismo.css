@@ -21,6 +21,7 @@ body {
 .row {
     display: flex;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 /* Estilos de la barra lateral */
@@ -175,39 +176,6 @@ img {
     border-radius: 8px;
 }
 
-/* Diseño para las secciones históricas */
-.historia-section {
-    display: flex;
-    margin-bottom: 80px;
-    align-items: flex-start;
-    gap: 40px;
-}
-
-.historia-section-reverse {
-    flex-direction: row-reverse;
-}
-
-.historia-text {
-    flex: 1;
-}
-
-.historia-image {
-    flex: 1;
-}
-
-.historia-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.image-caption {
-    text-align: center;
-    color: #666;
-    font-size: 0.9rem;
-    margin-top: 8px;
-}
-
 /* Navegación */
 .nav {
     display: flex;
@@ -277,12 +245,12 @@ img {
     object-fit: cover;
 }
 
-.Carrusel {
+.Informacion {
     font-weight: bold;
 }
 
 section {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 /* Galería de fotos */
@@ -338,7 +306,7 @@ section {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Ajusta las posiciones de los botones de navegación */
+/* Para ajustar las posiciones de los botones*/
 #lightbox #prev {
     position: relative;
     left: -50px; 
@@ -354,3 +322,29 @@ section {
     top: 5%;
     right: 5%;
 }
+
+/* Para el hover */
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .hover-info {
+    opacity: 1;
+}
+

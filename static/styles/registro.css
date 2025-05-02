@@ -2,7 +2,8 @@
 .botonRegistro {
     /* Define el diseño general del botón de registro */
     width: 100%;
-    background-color: #b6dcff;
+    /* background-color: #b6dcff; */
+    background-color: #5ccae5;
     padding: 8px 16px;
     border-radius: 6px;
     transition: background-color 0.2s;
@@ -12,7 +13,7 @@
 
 .botonRegistro:hover {
     /* Cambia el estilo del botón al pasar el cursor por encima */
-    background-color: #a9d0ff;
+    background-color: #5ccae5;
 }
 
 .botonRegistro:focus {
@@ -30,7 +31,8 @@
     justify-content: center;
     min-height: 100vh;
     padding: 16px;
-    background-image: url('../img/solucion.jpg');
+    background: #47e3ff;
+    background: linear-gradient(0deg, rgba(0, 217, 255, 1) 0%, rgba(128, 247, 255, 1) 50%, rgba(219, 255, 255, 1) 100%);
     width: 100%;
     height: auto;
     clear: both;
@@ -55,7 +57,7 @@
 
 .encabezado-formulario {
     /* Aplica estilos específicos al encabezado del formulario */
-    background-color: #b6dcff;
+    background-color: #5ccae5;
     color: black;
     text-align: center;
     padding: 16px;
@@ -112,5 +114,5 @@
 
 /* Navbar */
 .custom-navbar{
-    background-color: rgb(244, 253, 255);
+    background-color: rgba(219, 255, 255, 1);
 }
