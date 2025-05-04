@@ -66,3 +66,49 @@ footer {
         min-height: auto;
     }
 }
+
+.action-card {
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.destination-card {
+    transition: all 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-3px);
+}
+
+.destination-card img {
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.03);
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+}
+
+.empty-trips {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+}
+
+.empty-trips i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #dee2e6;
+}
