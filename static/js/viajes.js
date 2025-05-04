@@ -74,11 +74,10 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
                         <button class="btn btn-outline-danger rounded-pill px-3" onclick="eliminarViaje(${viaje.id})">
                             <i class="fas fa-trash me-1"></i>Eliminar
                         </button>
-                        
-                        <button type="btn warning rounded pill px-3" onclick="editarViaje(${viaje.id})">
+
+                        <button class="btn btn-secondary rounded-pill px-3" onclick="editarViaje(${viaje.id})">
                             <i class="fas fa-edit me-1"></i>Editar
                         </button>
-
                         <button class="btn btn-primary rounded-pill px-3" onclick="verDetalles(${viaje.id})">
                             <i class="fas fa-eye me-1"></i>Ver detalles
                         </button>
