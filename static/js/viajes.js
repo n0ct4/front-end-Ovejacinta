@@ -70,12 +70,19 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
                     </div>
                     <p class="text-secondary mb-4">${viaje.descripcion}</p>
                     <div class="d-flex justify-content-end gap-2">
+
                         <button class="btn btn-outline-danger rounded-pill px-3" onclick="eliminarViaje(${viaje.id})">
                             <i class="fas fa-trash me-1"></i>Eliminar
                         </button>
+                        
+                        <button type="btn warning rounded pill px-3" onclick="editarViaje(${viaje.id})">
+                            <i class="fas fa-edit me-1"></i>Editar
+                        </button>
+
                         <button class="btn btn-primary rounded-pill px-3" onclick="verDetalles(${viaje.id})">
                             <i class="fas fa-eye me-1"></i>Ver detalles
                         </button>
+
                     </div>
                 </div>
             `;
@@ -193,6 +200,111 @@ function mostrarDetalleEnModal(viaje) {
     document.getElementById('detalleViajeModal').addEventListener('hidden.bs.modal', function () {
         this.remove();
     });
+}
+
+async function editarViaje(idViaje) {
+    try {
+        const token = localStorage.getItem('authToken');
+
+        const response = await fetch(`http://localhost:5065/api/Viajes/Detail?idViaje=${idViaje}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) throw new Error("No se pudo obtener el viaje");
+
+        const result = await response.json();
+        const viaje = result.contenido;
+
+        const modalHTML = `
+        <div class="modal fade" id="editarViajeModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar viaje</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formEditarViaje">
+                            <input type="hidden" id="viajeIdEdit" value="${viaje.id}">
+                            <div class="mb-3">
+                                <label for="nombreEdit" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombreEdit" value="${viaje.nombre}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcionEdit" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="descripcionEdit">${viaje.descripcion}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fechaInicioEdit" class="form-label">Fecha inicio</label>
+                                <input type="date" class="form-control" id="fechaInicioEdit" value="${viaje.fechaInicioViaje.split('T')[0]}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fechaFinEdit" class="form-label">Fecha fin</label>
+                                <input type="date" class="form-control" id="fechaFinEdit" value="${viaje.fechaFinalViaje.split('T')[0]}">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success" onclick="guardarCambiosViaje()">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        const modal = new bootstrap.Modal(document.getElementById('editarViajeModal'));
+        modal.show();
+
+        document.getElementById('editarViajeModal').addEventListener('hidden.bs.modal', function(){
+            this.remove();
+        });
+
+    } catch (error) {
+        alert("Error al cargar datos del viaje: " + error.message);
+    }
+}
+
+async function guardarCambiosViaje() {
+    const idViaje = document.getElementById('viajeIdEdit').value;
+    const nombre = document.getElementById('nombreEdit').value;
+    const descripcion = document.getElementById('descripcionEdit').value;
+    const fechaInicio = document.getElementById('fechaInicioEdit').value;
+    const fechaFin = document.getElementById('fechaFinEdit').value;
+    const token = localStorage.getItem('authToken');
+
+    const turistaData = JSON.parse(localStorage.getItem('turistaData'));
+    const idTuristaCreador = turistaData.id;
+
+    try {
+        const response = await fetch("http://localhost:5065/api/Viajes", {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                id: idViaje,
+                nombre,
+                descripcion,
+                fechaInicioViaje: fechaInicio,
+                fechaFinalViaje: fechaFin,
+                idTuristaCreador: idTuristaCreador
+            })
+        });
+
+        if (!response.ok) throw new Error("Error al actualizar el viaje");
+
+        alert("Viaje actualizado");
+        window.location.reload();
+
+    } catch (error) {
+        alert("Error al guardar los cambios: " + error.message);
+    }
+
 }
 
 /**
