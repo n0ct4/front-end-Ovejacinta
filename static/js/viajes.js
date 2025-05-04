@@ -13,11 +13,6 @@ document.getElementById("btnGuardarViaje").addEventListener("click",
         window.location.reload();
     })
 
-// document.getElementById('btnDetallesViaje').addEventListener('click',
-//     async function () {
-//         await mostrarDetalleViaje()
-//     })
-
 async function obtenerNombreTurista(id) {
     try {
         const response = await fetch(`http://localhost:5065/api/Usuario/${id}`);
@@ -94,6 +89,59 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
     }
 });
 
+/**
+ * Función que se encarga de cargar todos los viajes que existen actualmente en la base de datos
+ * Hace una llamada al endpoint de Viajes
+ * Mete en un carrusel las cards que usamos para mostrar los viajes
+ */
+async function cargarTodosViajes() {
+    try {
+        const respuesta = await fetch(`http://localhost:5065/api/Viajes`); // Reemplaza con tu endpoint real
+        const data = await respuesta.json();
+        const viajes = data.contenido;
+
+        const carouselInner = document.getElementById("carouselInner");
+
+        viajes.forEach(async (viaje, index) => {
+            const fechaInicio = new Date(viaje.fechaInicioViaje).toLocaleDateString('es-ES', {
+                day: '2-digit', month: 'short', year: 'numeric'
+            });
+            const fechaFin = new Date(viaje.fechaFinalViaje).toLocaleDateString('es-ES', {
+                day: '2-digit', month: 'short', year: 'numeric'
+            });
+            const nombreTurista = await obtenerNombreTurista(viaje.idTuristaCreador);
+            const item = document.createElement("div");
+            item.className = "carousel-item" + (index === 0 ? " active" : "");
+            item.innerHTML = `
+                <div class="d-flex justify-content-center">
+                    <div class="card viaje-card shadow-sm rounded-4 border-0 p-4 w-75">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="fw-semibold text-dark m-0">${viaje.nombre}</h4>
+                            <span class="badge bg-light text-dark px-3 py-2 rounded-pill">España</span>
+                        </div>
+                        <div class="d-flex justify-content-between text-muted small mb-3">
+                            <div><i class="fas fa-calendar-alt me-2"></i>${fechaInicio} - ${fechaFin}</div>
+                            <div><i class="fas fa-users me-2"></i>${nombreTurista}</div>
+                        </div>
+                        <p class="text-secondary mb-4">${viaje.descripcion}</p>
+                        <div class="d-flex justify-content-end gap-2">
+                            <button class="btn btn-outline-danger rounded-pill px-3" onclick="eliminarViaje(${viaje.id})">
+                                <i class="fas fa-trash me-1"></i>Eliminar
+                            </button>
+                            <button class="btn btn-primary rounded-pill px-3" onclick="verDetalles(${viaje.id})">
+                                <i class="fas fa-eye me-1"></i>Ver detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            carouselInner.appendChild(item);
+        });
+
+    } catch (error) {
+        console.error("Error al cargar los viajes:", error);
+    }
+}
 
 async function crearViajeNuevo(usuario_id) {
 
@@ -259,7 +307,7 @@ async function editarViaje(idViaje) {
         const modal = new bootstrap.Modal(document.getElementById('editarViajeModal'));
         modal.show();
 
-        document.getElementById('editarViajeModal').addEventListener('hidden.bs.modal', function(){
+        document.getElementById('editarViajeModal').addEventListener('hidden.bs.modal', function () {
             this.remove();
         });
 
@@ -341,3 +389,7 @@ async function eliminarViaje(viajeId) {
 
     window.location.reload();
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await cargarTodosViajes();
+});
