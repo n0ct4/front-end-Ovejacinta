@@ -132,21 +132,25 @@
                 <h1 class="text-center mb-4"><i class="me-2"></i></h1>
             </div>
 
-            <div class="container">
-                <h2 class="mb-4">Inspírate para tu próximo viaje</h2>
-                <p class="intro-text mb-4">
-                    Descubre las experiencias que otros viajeros han creado y encuentra ideas para tu próxima aventura.
-                </p>
-                <div id="carruselViajes" class="carousel slide mb-4" data-bs-ride="carousel">
-                    <div class="carousel-inner" id="carouselInner"></div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselViajes"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carruselViajes"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
+            <div class="carrusel-section">
+                <div class="carrusel-container">
+                    <h2 class="carrusel-title">Inspírate para tu próximo viaje</h2>
+                    <p class="carrusel-subtitle">
+                        Descubre las experiencias que otros viajeros han creado y encuentra ideas para tu próxima aventura.
+                    </p>
+                    <div id="carruselViajes" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner carrusel-inner" id="carouselInner">
+                            <!-- Los items del carrusel se generarán aquí dinámicamente -->
+                        </div>
+                        <button class="carousel-control-prev carrusel-control-prev" type="button" data-bs-target="#carruselViajes"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next carrusel-control-next" type="button" data-bs-target="#carruselViajes"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon">-></span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
