@@ -13,6 +13,12 @@ document.getElementById("btnGuardarViaje").addEventListener("click",
         window.location.reload();
     })
 
+/**
+ * @description
+ * Función que se encarga de obtener el nombre del turista a través de una llamada a la API con su id
+ * @param {*} id ID del turista que se va a buscar
+ * @returns Nombre del turista en caso de Ok || Un string de 'Turista desconocido' si hay algún error o no es encontrado
+ */
 async function obtenerNombreTurista(id) {
     try {
         const response = await fetch(`http://localhost:5065/api/Usuario/${id}`);
@@ -140,6 +146,14 @@ async function cargarTodosViajes() {
     }
 }
 
+/**
+ * @description
+ * Es una función que permite crear un viaje nuevo dentro de nuestro sistema
+ * Se genera un modal que permite rellenar los datos típicos de un viaje dentro de nuestro sistema
+ * @async Es una función asíncrona dentro del codigo
+ * @throws {Error} Devuelve un error en caso de detectarlo durante el proceso de la función
+ * @param {*} usuario_id ID del usuario que está creando el viaje nuevo
+ */
 async function crearViajeNuevo(usuario_id) {
 
     const nombreViaje = document.getElementById('nombreViaje').value;
@@ -172,6 +186,13 @@ async function crearViajeNuevo(usuario_id) {
     }
 }
 
+/**
+ * @description
+ * Es una función que permite inspeccionar los detalles en especifico de un viaje seleccionado
+ * @async Es una función asíncrona dentro del codigo
+ * @throws {Error} Devuelve un error en caso de detectarlo durante el proceso de la función
+ * @param {*} viajeId ID del viaje que se está inspeccionando
+ */
 async function verDetalles(viajeId) {
     try {
         const token = localStorage.getItem('authToken');
@@ -191,7 +212,7 @@ async function verDetalles(viajeId) {
 
         const viajeDetalle = result.contenido;
 
-        mostrarDetalleEnModal(viajeDetalle);
+        mostrarDetalleEnModal(viajeDetalle); // Llamada a función para que genere los detalles dentro del modal creado 
 
     } catch (error) {
         console.error('Error al obtener detalles del viaje:', error);
@@ -199,6 +220,13 @@ async function verDetalles(viajeId) {
     }
 }
 
+/**
+ * @description 
+ * Función que se encarga de rellenar los datos y generar el html del modal a través de los datos
+ * obtenidos por una llamada a uno de los endpoints de la API, que devuelve un viaje en concreto
+ * @param {*} viaje Objeto de la clase viaje
+ * @throws {Error} Devuelve un error si es detectado en el proceso de la función
+ */
 function mostrarDetalleEnModal(viaje) {
     const fechaInicio = new Date(viaje.fechaInicioViaje).toLocaleDateString('es-ES');
     const fechaFin = new Date(viaje.fechaFinalViaje).toLocaleDateString('es-ES');
@@ -312,6 +340,7 @@ async function editarViaje(idViaje) {
         alert("Error al cargar datos del viaje: " + error.message);
     }
 }
+
 
 async function guardarCambiosViaje() {
     const idViaje = document.getElementById('viajeIdEdit').value;

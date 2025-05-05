@@ -98,6 +98,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     })
 });
 
+/**
+ * Función que genera un evento en la carga del html
+ * Se encarga de reducir el sidebar y ampliarlo en caso de que esté minimizado
+ */
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('menu-boton');
     const sidebar = document.getElementById('sidebar');

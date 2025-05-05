@@ -51,11 +51,191 @@
                     </nav>
                 </div>
             </div>
+            <!-- Sección de cabecera de la página de contacto -->
+            <section class="cabecera-section text-center">
+                <div class="container">
+                    <h1 class="display-4 fw-bold">Contáctanos</h1>
+                    <p class="lead">Estamos aquí para ayudarte. Conoce más sobre nosotros y nuestro equipo.</p>
+                </div>
+            </section>
+            <!-- Sección de información de contacto de relleno -->
+            <section class="container mb-5">
+                <h2 class="text-center section-title">¿Por qué contactar con nosotros?</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card info-card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-handshake"></i>
+                                <h3>Experiencia</h3>
+                                <p>Más de 15 años ayudando a nuestros clientes a alcanzar sus objetivos con soluciones
+                                    personalizadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card info-card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-users"></i>
+                                <h3>Enfoque</h3>
+                                <p>Ponemos a las personas en el centro de todo lo que hacemos, con un trato cercano y
+                                    profesional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card info-card">
+                            <div class="card-body text-center">
+                                <i class="fas fa-lightbulb"></i>
+                                <h3>Innovación</h3>
+                                <p>Utilizamos las últimas tecnologías y metodologías para ofrecerte las mejores
+                                    soluciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Sección de cards de integrantes del grupo -->
+            <section class="team-section">
+                <div class="container">
+                    <h2 class="text-center section-title">Nuestro Equipo</h2>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card team-card">
+                                <img src="https://source.unsplash.com/random/600x400/?portrait,man" class="card-img-top"
+                                    alt="Miembro del equipo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Juan Pérez</h5>
+                                    <p class="card-text text-muted">Director General</p>
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card team-card">
+                                <img src="https://source.unsplash.com/random/600x400/?portrait,woman"
+                                    class="card-img-top" alt="Miembro del equipo">
+                                <div class="card-body">
+                                    <h5 class="card-title">María García</h5>
+                                    <p class="card-text text-muted">Directora de Proyectos</p>
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card team-card">
+                                <img src="https://source.unsplash.com/random/600x400/?portrait,businessman"
+                                    class="card-img-top" alt="Miembro del equipo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Carlos López</h5>
+                                    <p class="card-text text-muted">Jefe de Desarrollo</p>
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card team-card">
+                                <img src="https://source.unsplash.com/random/600x400/?portrait,businesswoman"
+                                    class="card-img-top" alt="Miembro del equipo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ana Martínez</h5>
+                                    <p class="card-text text-muted">Diseñadora UX/UI</p>
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Sección de información de contacto -->
+            <section class="contact-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="row mb-3 contacto">
+                                <h1 style="text-align: center;">Contáctanos</h1>
+                                <h2 class="subtituloContacto">Haznos saber tus dudas</h2>
+                                <form id="contact-form" action="https://postman-echo.com/post" method="POST">
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control datosUsuario" name="nombre"
+                                                placeholder="Nombre" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control datosUsuario" name="apellido1"
+                                                placeholder="1º Apellido" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control datosUsuario" name="apellido2"
+                                                placeholder="2º Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <input type="tel" class="form-control telefono" name="telefono"
+                                                placeholder="+34-612-612-612" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="email" class="form-control email" name="email"
+                                                placeholder="ejemplo@correo.com" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <input type="text" class="form-control Asunto" name="asunto"
+                                                placeholder="Asunto">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-12">
+                                            <textarea class="form-control mensaje" name="mensaje" rows="4"
+                                                placeholder="Escribe aquí tu mensaje..." required></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" id="botonEnviar" class="btn btn-primary">Enviar</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="contact-info">
+                                <h3>Información de contacto</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Calle Ejemplo, 123, 28001 Madrid</p>
+                                <p><i class="fas fa-phone"></i> +34 91 123 45 67</p>
+                                <p><i class="fas fa-mobile-alt"></i> +34 612 345 678</p>
+                                <p><i class="fas fa-envelope"></i> info@empresa.com</p>
+                                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 - 18:00</p>
 
+                                <h3 class="mt-4">Síguenos</h3>
+                                <div class="social-links">
+                                    <a href="#" class="me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                    <a href="#" class="me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                                    <a href="#" class="me-2"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                                    <a href="#" class="me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Contenido principal -->
-            <main class="col-md-9 col-lg-10 main-content">
+            <!-- <main class="col-md-9 col-lg-10 main-content">
 
                 <div class="user-welcome">
                     <h1 style="text-align: center;">Sobre Nostros</h1>
@@ -120,7 +300,7 @@
                     <h1 style="text-align: center;">Contáctanos</h1>
                     <h2 class="subtituloContacto">Haznos saber tus dudas</h2>
                     <!--Formulario-->
-                    <form id="contact-form" action="https://postman-echo.com/post" method="POST">
+            <!-- <form id="contact-form" action="https://postman-echo.com/post" method="POST">
                         <div class="row mb-3">
                             <div class="col-md-4">
                                 <input type="text" class="form-control datosUsuario" placeholder="Nombre" required>
@@ -160,7 +340,7 @@
                     </form>
                 </div>
 
-            </main>
+            </main> --> -->
 
 
             <!-- Footer simple -->
@@ -181,10 +361,6 @@
 
         </div>
     </div>
-
-
-
-
     <script src="../static/js/usuario.js"></script>
     <script src="../static/js/perfil.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

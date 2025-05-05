@@ -120,6 +120,12 @@ async function cargarProximosViajes(userId) {
     }
 }
 
+/**
+ * Función que se encarga de inspeccionar los detalles en concreto de un viaje en específico
+ * Muestra todos los datos en un nuevo modal generado por la propia función
+ * Hace una llamada a la API a través del id
+ * @param {*} viajeId 
+ */
 async function verDetalles(viajeId) {
     try {
         const token = localStorage.getItem('authToken');
