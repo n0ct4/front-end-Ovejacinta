@@ -79,53 +79,137 @@ body {
     border-top: none;
 }
 
-.card-viaje {
-    background: linear-gradient(145deg, #ffffff, #f4f4ff);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 8px 24px rgba(87, 82, 218, 0.08);
-    border: 1px solid #e0e0ff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.carrusel-section {
+    background-color: #f8f9fad1;
+    padding: 60px 0;
+    margin: 40px 0;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
 }
 
-.card-viaje:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(63, 58, 203, 0.15);
+.carrusel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Carrusel */
-.carousel-inner img {
-    border-radius: 0.75rem;
-    object-fit: cover;
-    height: 300px;
-    width: 100%;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #3b49df;
-    border-radius: 50%;
-    padding: 10px;
-}
-
-/* Footer */
-footer {
-    padding: 1rem 2rem;
-    background: linear-gradient(to right, #f5f7ff, #eceeff);
-    border-top: 1px solid #dcdcff;
-    font-size: 0.9rem;
-    color: #4a4a6a;
+.carrusel-title {
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
     text-align: center;
+    position: relative;
+    padding-bottom: 15px;
 }
 
-footer a {
-    color: #3b49df;
-    text-decoration: none;
+.carrusel-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #4a6bff;
 }
 
-footer a:hover {
-    color: #2a37b0;
-    text-decoration: underline;
+.carrusel-subtitle {
+    color: #5a6a7a;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.carrusel-inner {
+    padding: 20px 0 40px;
+}
+
+.carousel-item {
+    padding: 0 15px;
+    transition: transform 0.6s ease;
+}
+
+.carousel-item img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.carrusel-control-prev,
+.carrusel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.548);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.carrusel-control-prev {
+    left: -25px;
+}
+
+.carrusel-control-next {
+    right: -25px;
+}
+
+.carrusel-control-prev:hover,
+.carrusel-control-next:hover {
+    background-color: white;
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.carrusel-control-prev-icon,
+.carrusel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    background-size: 100%, 100%;
+    background-image: none;
+}
+
+.carrusel-control-prev-icon::before {
+    content: '←' !important;
+    color: #4a6bff !important;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.carrusel-control-next-icon::before {
+    content: '→';
+    color: #4a6bff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+    bottom: -40px;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(74, 107, 255, 0.4);
+    border: none;
+    margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+    background-color: #4a6bff;
+}
+
+footer {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
 }
