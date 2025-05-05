@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
                     <div class="d-flex justify-content-end gap-2">
 
                         <button class="btn btn-outline-danger rounded-pill px-3" onclick="eliminarViaje(${viaje.id})">
-                            <i class="fas fa-trash me-1"></i>Eliminar
+                            <i class="fas fa-trash me-1"></i>
                         </button>
 
                         <button class="btn btn-secondary rounded-pill px-3" onclick="editarViaje(${viaje.id})">
-                            <i class="fas fa-edit me-1"></i>Editar
+                            <i class="fas fa-edit me-1"></i>
                         </button>
                         <button class="btn btn-primary rounded-pill px-3" onclick="verDetalles(${viaje.id})">
                             <i class="fas fa-eye me-1"></i>Ver detalles
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
  */
 async function cargarTodosViajes() {
     try {
-        const respuesta = await fetch(`http://localhost:5065/api/Viajes`); // Reemplaza con tu endpoint real
+        const respuesta = await fetch(`http://localhost:5065/api/Viajes`); 
         const data = await respuesta.json();
         const viajes = data.contenido;
 
@@ -124,9 +124,7 @@ async function cargarTodosViajes() {
                         </div>
                         <p class="text-secondary mb-4">${viaje.descripcion}</p>
                         <div class="d-flex justify-content-end gap-2">
-                            <button class="btn btn-outline-danger rounded-pill px-3" onclick="eliminarViaje(${viaje.id})">
-                                <i class="fas fa-trash me-1"></i>Eliminar
-                            </button>
+                            
                             <button class="btn btn-primary rounded-pill px-3" onclick="verDetalles(${viaje.id})">
                                 <i class="fas fa-eye me-1"></i>Ver detalles
                             </button>

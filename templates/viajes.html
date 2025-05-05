@@ -57,21 +57,17 @@
 
         <div class="col-lg-10 col-md-9">
             <div clas="row">
-                <div class="px-4 pt-5 my-5 text-center border-bottom">
-                    <h1 class="display-4 fw-bold text-center">Crea tu viaje</h1>
-                    <div class="col-lg-6 mx-auto">
-                        <p class="lead mb-4">Desde aqui podrás crear un viaje que se adapte a ti, podrás realizarlo solo
-                            o invitar
-                            a tus amigos.
+                <div class="hero-section text-center py-5 bg-light">
+                    <div class="container">
+                        <h1 class="display-5 mb-3">¡Crea tu viaje soñado!</h1>
+                        <p class="mb-4">
+                            Diseña una experiencia a tu medida, solo o acompañado. Ovejacinta te ayudará en cada paso del camino.
                         </p>
-                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                                Crear
-                            </button>
-                        </div>
+                        <button type="button" class="btn btn-lg btn-primary px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fas fa-plus me-2"></i> Crear Viaje
+                        </button>
                     </div>
+                
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -90,7 +86,7 @@
                                             <input type="text" class="form-control" id="nombreViaje" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="descripcionViaje" class="form-label">Descripcion</label>
+                                            <label for="descripcionViaje" class="form-label">Descripción</label>
                                             <input type="text" class="form-control" id="descripcionViaje" required>
                                         </div>
                                         <div class="row">
@@ -118,8 +114,8 @@
             </div>
 
             <div class="container py-4" id="tusViajesContainer">
-                <h1 class="text-center mb-4">Mis Viajes</h1>
-                <p class="text-muted lead">Este panel está diseñado para que puedas revivir tus aventuras, organizar
+                <p class="text lead">
+                    <br/>Este panel está diseñado para que puedas revivir tus aventuras, organizar
                     nuevas
                     salidas y tener bajo control todos los detalles de tus experiencias.
                     Y no te preocupes, no estás solo en el camino: <strong>Ovejacinta</strong>, nuestra simpática
@@ -128,8 +124,7 @@
                     camino.
                     <br><br>
                     Así que respira profundo, explora con calma, ¡y deja que Ovejacinta y este espacio te acompañen en
-                    el
-                    recorrido de tus recuerdos viajeros!
+                    el recorrido de tus recuerdos viajeros!
                 </p>
             </div>
 
@@ -138,11 +133,11 @@
             </div>
 
             <div class="container">
-                <h2 class="mb-4">Inspirate para tu proximo viaje</h2>
+                <h2 class="mb-4">Inspírate para tu próximo viaje</h2>
                 <p class="intro-text mb-4">
                     Descubre las experiencias que otros viajeros han creado y encuentra ideas para tu próxima aventura.
                 </p>
-                <div id="carruselViajes" class="carousel slide" data-bs-ride="carousel">
+                <div id="carruselViajes" class="carousel slide mb-4" data-bs-ride="carousel">
                     <div class="carousel-inner" id="carouselInner"></div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carruselViajes"
                         data-bs-slide="prev">

@@ -41,60 +41,91 @@ body {
     text-align: center;
 }
 
-.main-content {
-    padding: 2rem;
-}
-
-.user-welcome {
-    background-color: #fff;
+.hero-section {
+    background: linear-gradient(to right, #e3f2fd, #fff);
     border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2rem;
-}
-
-.viaje-card {
-    background-color: #ffffff;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;             
-    padding: 24px;           
-    box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.1);
-}
-
-.viaje-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 12px 12px 20px 12px rgba(0, 0, 0, 0.08);
-}
-
-.viaje-header {
-    background-color: #f0c897;
-    color: #333;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.viaje-body {
-    padding: 20px;
-}
-
-.badge-destino {
-    font-size: 0.75rem;
-    background-color: #f0e3d8;
-    color: #5a4533;
-}
-
-footer {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-top: 1px solid #eee;
     margin-top: 2rem;
 }
 
-@media (max-width: 768px) {
-    .sidebar {
-        min-height: auto;
-    }
+.hero-section h1 {
+    font-weight: 700;
+    color: #3b49df;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.hero-section p {
+    color: #4a4a6a;
+    font-size: 1.15rem;
+}
+
+.modal-content {
+    border-radius: 1rem;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+}
+
+.modal-header {
+    background-color: #e6f0ff;
+    border-bottom: none;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: #3b49df;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.card-viaje {
+    background: linear-gradient(145deg, #ffffff, #f4f4ff);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(87, 82, 218, 0.08);
+    border: 1px solid #e0e0ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-viaje:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(63, 58, 203, 0.15);
+}
+
+/* Carrusel */
+.carousel-inner img {
+    border-radius: 0.75rem;
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #3b49df;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Footer */
+footer {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #f5f7ff, #eceeff);
+    border-top: 1px solid #dcdcff;
+    font-size: 0.9rem;
+    color: #4a4a6a;
+    text-align: center;
+}
+
+footer a {
+    color: #3b49df;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #2a37b0;
+    text-decoration: underline;
 }
