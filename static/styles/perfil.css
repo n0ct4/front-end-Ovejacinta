@@ -201,13 +201,12 @@ footer {
     background-color: #fff;
     padding: 1.5rem;
     border-top: 1px solid #eee;
-    margin-top: 2rem;
 }
 
-.main-content {
-    overflow-y: hidden;
-    height: auto;
+.main-content.expanded {
+    width: 94.70%;
 }
+
 
 
 /*Cajas perfil*/
@@ -258,4 +257,5 @@ footer {
     .realizarTest > p {
         margin-top: 2%;
     }
+
 }

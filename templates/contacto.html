@@ -15,8 +15,15 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 sidebar p-0">
+            <div class="col-md-3 col-lg-2 sidebar p-0" id="sidebar">
                 <div class="sidebar-brand text-center">
+                    <div class="row">
+                        <button class="botonColapse" id="menu-boton">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </button>
+                    </div>
                     <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Usuario"
                         class="rounded-circle mb-2 align-items" style="width: 80px; height: 80px;">
                 </div>
@@ -51,369 +58,266 @@
                     </nav>
                 </div>
             </div>
-            <!-- Sección de cabecera de la página de contacto -->
-            <section class="cabecera-section text-center">
-                <div class="container">
-                    <h1 class="display-4 fw-bold">Contáctanos</h1>
-                    <p class="lead">Estamos aquí para ayudarte. Conoce más sobre nosotros y nuestro equipo.</p>
-                </div>
-            </section>
-            <!-- Sección de información de contacto de relleno -->
-            <section class="container mb-5">
-                <h2 class="text-center section-title">¿Por qué contactar con nosotros?</h2>
-                <!-- <div class="row">
-                    <div class="col-md-4">
-                        <div class="card info-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-handshake"></i>
-                                <h3>Experiencia</h3>
-                                <p>Más de 15 años ayudando a nuestros clientes a alcanzar sus objetivos con soluciones
-                                    personalizadas.</p>
-                            </div>
-                        </div>
+
+            <main class="col-md-9 col-lg-10 main-content scroll-vertical">
+                <!-- Sección de cabecera de la página de contacto -->
+                <section class="cabecera-section text-center">
+                    <div class="container">
+                        <h1 class="display-4 fw-bold">Contáctanos</h1>
+                        <p class="lead">Estamos aquí para ayudarte. Conoce más sobre nosotros y nuestro equipo.</p>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card info-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-users"></i>
-                                <h3>Enfoque</h3>
-                                <p>Ponemos a las personas en el centro de todo lo que hacemos, con un trato cercano y
-                                    profesional.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card info-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-lightbulb"></i>
-                                <h3>Innovación</h3>
-                                <p>Utilizamos las últimas tecnologías y metodologías para ofrecerte las mejores
-                                    soluciones.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!--Segunda fila de cards-->
-                <div class="row mt-4">
-                    <div class="col-md-4">
-                        <div class="card info-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-id-badge"></i>
-                                <h3>¿Quienes somos?</h3>
-                                <p>Somos un grupo de estudiantes de la Universidad Francisco Vitoria, formado por Miguel Rámirez
-                                    Ochoa, Javier Argenta Cañas, Pablo Touza Juristo, Ana Gárcia Nuñez y Diego Vázquez Morales, los cuales
-                                    nos hemos unido para realizar la creación de esta aplicación.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card info-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-rocket"></i>
-                                <h3>¿Porque creamos esta aplicación?</h3>
-                                <p>Nuestra aplicación se creó como respuesta a un reto propuesto por el ayuntamiento de San Esteban de Gormaz a los alumnos de la Universidad. 
-                                    El reto consistía en la realización de un proyecto que beneficiara a dicho pueblo. 
-                                    <br>
-                                    En nuestro caso, diseñamos una solución para resolver un problema recurrente en San Esteban de Gormaz: la
-                                     falta de turistas en el pueblo. Para ello, diseñamos una solución que permitiese fomentar el crecimiento de la economía local y 
-                                    dar visibilidad al rico patrimonio histórico, cultural y natural del municipio</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card info-card">
-                            <div class="card-body text-center">
-                                <i class="fas fa-puzzle-piece"></i>
-                                <h3>¿En que consiste nuestra solución?</h3>
-                                <p>Para lograr esto, nuestra solución consiste en un asistente turístico virtual, el cual ofrece rutas turísticas personalizadas 
-                                    para cada viajero, que se generan a partir de los gustos de los turistas. Estas rutas turísticas contienen puntos de interés, los cuales 
-                                    permiten a los visitantes conocer la gastronomía y el patrimonio del pueblo.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </section>
-            <!-- Sección de cards de integrantes del grupo -->
-            <section class="team-section">
-                <div class="container">
-                    <h2 class="text-center section-title">Nuestro Equipo</h2>
-                    <div class="row">
-                        <div class="col-lg-1"></div>
-                        <div class="col-lg-2 col-md-6">
-                            <div class="card team-card">
-                                <img src="../static/img/Myke.png" style="height: 180px; width: 180px;" class="card-img-top"
-                                    alt="Miembro del equipo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Miguel Ramírez Ochoa</h5>
-                                    <p class="card-text text-muted">Desarrolador</p>
-                                    <div class="social-links">
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fas fa-envelope"></i></a>
-                                    </div>
+                </section>
+                <!-- Sección de información de contacto de relleno -->
+                <section class="container mb-5">
+                    <h2 class="text-center section-title">¿Por qué contactar con nosotros?</h2>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="card info-card">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-id-badge"></i>
+                                    <h3>¿Quienes somos?</h3>
+                                    <p>Somos un grupo de estudiantes de la Universidad Francisco Vitoria, formado por
+                                        Miguel Rámirez
+                                        Ochoa, Javier Argenta Cañas, Pablo Touza Juristo, Ana Gárcia Nuñez y Diego
+                                        Vázquez Morales, los cuales
+                                        nos hemos unido para realizar la creación de esta aplicación.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-6">
-                            <div class="card team-card">
-                                <img src="../static/img/Ana.png" style="height: 180px; width: 180px;" class="card-img-top"
-                                    alt="Miembro del equipo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ana González Núñez</h5>
-                                    <p class="card-text text-muted">Diseñadora</p>
-                                    <div class="social-links">
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fas fa-envelope"></i></a>
-                                    </div>
+                        <div class="col-md-4">
+                            <div class="card info-card">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-rocket"></i>
+                                    <h3>¿Porque creamos esta aplicación?</h3>
+                                    <p>Nuestra aplicación se creó como respuesta a un reto propuesto por el ayuntamiento
+                                        de San Esteban de Gormaz a los alumnos de la Universidad.
+                                        El reto consistía en la realización de un proyecto que beneficiara a dicho
+                                        pueblo.
+                                        <br>
+                                        En nuestro caso, diseñamos una solución para resolver un problema recurrente en
+                                        San Esteban de Gormaz: la
+                                        falta de turistas en el pueblo. Para ello, diseñamos una solución que permitiese
+                                        fomentar el crecimiento de la economía local y
+                                        dar visibilidad al rico patrimonio histórico, cultural y natural del municipio
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-6">
-                            <div class="card team-card">
-                                <img src="../static/img/Argenta.png" style="height: 180px; width: 180px;"
-                                    class="card-img-top" alt="Miembro del equipo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Javier Argenta Cañas</h5>
-                                    <p class="card-text text-muted">Coordinador</p>
-                                    <div class="social-links">
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fas fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6">
-                            <div class="card team-card">
-                                <img src="../static/img/Touza.png" style="height: 180px; width: 180px;"
-                                    class="card-img-top" alt="Miembro del equipo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Pablo Touza Juristo</h5>
-                                    <p class="card-text text-muted">Desarrolador</p>
-                                    <div class="social-links">
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fas fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6">
-                            <div class="card team-card">
-                                <img src="../static/img/Diego.png" style="height: 180px; width: 180px;"
-                                    class="card-img-top" alt="Miembro del equipo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Diego Vázquez Morales</h5>
-                                    <p class="card-text text-muted">Desarrolador</p>
-                                    <div class="social-links">
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fas fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-1"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card team-card">
-                                <img src="https://source.unsplash.com/random/600x400/?portrait,businesswoman"
-                                    class="card-img-top" alt="Miembro del equipo">
-                                <div class="card-body">
-                                    <h5 class="card-title">Grupo Ovejacinta</h5>
-                                    <p class="card-text text-muted">¡Y estos somos nosotros!</p>
-                                    <div class="social-links">
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fas fa-envelope"></i></a>
-                                    </div>
+                        <div class="col-md-4">
+                            <div class="card info-card">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                    <h3>¿En que consiste nuestra solución?</h3>
+                                    <p>Para lograr esto, nuestra solución consiste en un asistente turístico virtual, el
+                                        cual ofrece rutas turísticas personalizadas
+                                        para cada viajero, que se generan a partir de los gustos de los turistas. Estas
+                                        rutas turísticas contienen puntos de interés, los cuales
+                                        permiten a los visitantes conocer la gastronomía y el patrimonio del pueblo.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!-- Sección de información de contacto -->
-            <section class="contact-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="row mb-3 contacto">
-                                <h1 style="text-align: center;">Contáctanos</h1>
-                                <h2 class="subtituloContacto">Haznos saber tus dudas</h2>
-                                <form id="contact-form" action="https://postman-echo.com/post" method="POST">
-                                    <div class="row mb-3">
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control datosUsuario" name="nombre"
-                                                placeholder="Nombre" required>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control datosUsuario" name="apellido1"
-                                                placeholder="1º Apellido" required>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control datosUsuario" name="apellido2"
-                                                placeholder="2º Apellido">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <input type="tel" class="form-control telefono" name="telefono"
-                                                placeholder="+34-612-612-612" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="email" class="form-control email" name="email"
-                                                placeholder="ejemplo@correo.com" required>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-12">
-                                            <input type="text" class="form-control Asunto" name="asunto"
-                                                placeholder="Asunto">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col-12">
-                                            <textarea class="form-control mensaje" name="mensaje" rows="4"
-                                                placeholder="Escribe aquí tu mensaje..." required></textarea>
-                                        </div>
-                                    </div>
-                                    <button type="submit" id="botonEnviar" class="btn btn-primary">Enviar</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="contact-info">
-                                <h3>Información de contacto</h3>
-                                <p><i class="fas fa-map-marker-alt"></i> M-515, km 1, 800, 28223 Pozuelo de Alarcón, Madrid</p>
-                                <p><i class="fas fa-phone"></i> +34 91 123 45 67</p>
-                                <p><i class="fas fa-mobile-alt"></i> +34 612 345 678</p>
-                                <p><i class="fas fa-envelope"></i> Ovejacinta@gmail.com</p>
-                                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 - 18:00</p>
 
-                                <h3 class="mt-4">Síguenos</h3>
-                                <div class="social-links">
-                                    <a href="#" class="me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
-                                    <a href="#" class="me-2"><i class="fab fa-twitter fa-lg"></i></a>
-                                    <a href="#" class="me-2"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                                    <a href="#" class="me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                </section>
+                <!-- Sección de cards de integrantes del grupo -->
+                <section class="team-section">
+                    <div class="container">
+                        <h2 class="text-center section-title">Nuestro Equipo</h2>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="card team-card">
+                                    <img src="../static/img/Myke.png" style="height: 180px; width: 180px;"
+                                        class="card-img-top" alt="Miembro del equipo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Miguel Ramírez Ochoa</h5>
+                                        <p class="card-text text-muted">Desarrolador</p>
+                                        <div class="social-links">
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fas fa-envelope"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contenido principal -->
-            <!-- <main class="col-md-9 col-lg-10 main-content">
-
-                <div class="user-welcome">
-                    <h1 style="text-align: center;">Sobre Nostros</h1>
-                </div>
-                <div class="row mb-3 sobreNosotros">
-
-                    <div class="row img-text">
-                        <div class="col-md-6">
-                            <h3 style="text-align: center;">¿Quienes Somos?</h3>
-                            <p>
-                                Somos un grupo de estudiantes de la Universidad Francisco Vitoria, formado por Miguel
-                                Rámirez
-                                Ochoa, Javier Argenta Cañas, Pablo Touza Juristo, Ana Gárcia Nuñez y Diego Vázquez
-                                Morales, los cuales
-                                nos hemos unido para realizar la creación de esta aplicación.
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="" alt="Imagen">
-                        </div>
-                    </div>
-                    <div class="row mb-3 img-text">
-                        <div class="col-md-6">
-                            <img id="imagenAlcalde" src="../static/img/ImagenAlcaladeSanEsteban.jpg">
-                        </div>
-                        <div class="col-md-6">
-                            <h3 style="text-align: center;">¿Porque creamos esta aplicación?</h3>
-                            <p>
-                                Nuestra aplicación se creó como respuesta a un reto propuesto por el ayuntamiento de San
-                                Esteban de Gormaz a los alumnos de la Universidad.
-                                El reto consistía en la realización de un proyecto que beneficiara a dicho pueblo.
-                                <br>
-                                En nuestro caso, diseñamos una solución para resolver un problema recurrente en San
-                                Esteban de Gormaz: la
-                                falta de turistas en el pueblo. Para ello, diseñamos una solución que permitiese
-                                fomentar el crecimiento de la economía local y
-                                dar visibilidad al rico patrimonio histórico, cultural y natural del municipio
-
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="row img-text">
-                        <div class="col-md-6">
-                            <h3 style="text-align: center;">¿En que consiste nuestra solución?</h3>
-                            <p>
-                                Para lograr esto, nuestra solución consiste en un asistente turístico virtual, el cual
-                                ofrece rutas turísticas personalizadas
-                                para cada viajero, que se generan a partir de los gustos de los turistas. Estas rutas
-                                turísticas contienen puntos de interés, los cuales
-                                permiten a los visitantes conocer la gastronomía y el patrimonio del pueblo.
-
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="../static/img/Oveja_Guia_turistico_3.png" id="imagenGuia">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mb-3 contacto">
-                    <h1 style="text-align: center;">Contáctanos</h1>
-                    <h2 class="subtituloContacto">Haznos saber tus dudas</h2>
-                    Formulario-->
-            <!-- <form id="contact-form" action="https://postman-echo.com/post" method="POST">
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <input type="text" class="form-control datosUsuario" placeholder="Nombre" required>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="card team-card">
+                                    <img src="../static/img/Ana.png" style="height: 180px; width: 180px;"
+                                        class="card-img-top" alt="Miembro del equipo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ana González Núñez</h5>
+                                        <p class="card-text text-muted">Diseñadora</p>
+                                        <div class="social-links">
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fas fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control  datosUsuario" placeholder="1º Apellido" required>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="card team-card">
+                                    <img src="../static/img/Argenta.png" style="height: 180px; width: 180px;"
+                                        class="card-img-top" alt="Miembro del equipo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Javier Argenta Cañas</h5>
+                                        <p class="card-text text-muted">Coordinador</p>
+                                        <div class="social-links">
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fas fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control datosUsuario" placeholder="2º Apellido" required>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="card team-card">
+                                    <img src="../static/img/Touza.png" style="height: 180px; width: 180px;"
+                                        class="card-img-top" alt="Miembro del equipo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pablo Touza Juristo</h5>
+                                        <p class="card-text text-muted">Desarrolador</p>
+                                        <div class="social-links">
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fas fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-lg-2 col-md-6">
+                                <div class="card team-card">
+                                    <img src="../static/img/Diego.png" style="height: 180px; width: 180px;"
+                                        class="card-img-top" alt="Miembro del equipo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Diego Vázquez Morales</h5>
+                                        <p class="card-text text-muted">Desarrolador</p>
+                                        <div class="social-links">
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#correoUsuarioDiego"><i
+                                                    class="fas fa-envelope"></i></a>
+                                        </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <input type="tel" class="form-control telefono" placeholder="+34-612-612-612" required>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="correoUsuarioDiego" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title" id="exampleModalLabel">Correo</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>hola que tal</p>
+                                                    </div>
+                                                    <div class="modal-footer text-center">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control email" placeholder="ejemplo@correo.com" required>
-                            </div>
+                            <div class="col-lg-1"></div>
                         </div>
-
-                        <div class="row mb-3">
+                        <div class="row">
                             <div class="col-12">
-                                <input type="text" class="form-control Asunto" placeholder="Asunto">
+                                <div class="card team-card">
+                                    <img src="https://source.unsplash.com/random/600x400/?portrait,businesswoman"
+                                        class="card-img-top" alt="Miembro del equipo">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Grupo Ovejacinta</h5>
+                                        <p class="card-text text-muted">¡Y estos somos nosotros!</p>
+                                        <div class="social-links">
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fas fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </section>
+                <!-- Sección de información de contacto -->
+                <section class="contact-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="row mb-3 contacto">
+                                    <h1 style="text-align: center;">Contáctanos</h1>
+                                    <h2 class="subtituloContacto">Haznos saber tus dudas</h2>
+                                    <form id="contact-form" action="https://postman-echo.com/post" method="POST">
+                                        <div class="row mb-3">
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control datosUsuario" name="nombre"
+                                                    placeholder="Nombre" required>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control datosUsuario" name="apellido1"
+                                                    placeholder="1º Apellido" required>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control datosUsuario" name="apellido2"
+                                                    placeholder="2º Apellido">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <input type="tel" class="form-control telefono" name="telefono"
+                                                    placeholder="+34-612-612-612" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="email" class="form-control email" name="email"
+                                                    placeholder="ejemplo@correo.com" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-12">
+                                                <input type="text" class="form-control Asunto" name="asunto"
+                                                    placeholder="Asunto">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-12">
+                                                <textarea class="form-control mensaje" name="mensaje" rows="4"
+                                                    placeholder="Escribe aquí tu mensaje..." required></textarea>
+                                            </div>
+                                        </div>
+                                        <button type="submit" id="botonEnviar" class="btn btn-primary">Enviar</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="contact-info">
+                                    <h3>Información de contacto</h3>
+                                    <p><i class="fas fa-map-marker-alt"></i> M-515, km 1, 800, 28223 Pozuelo de Alarcón,
+                                        Madrid</p>
+                                    <p><i class="fas fa-phone"></i> +34 91 123 45 67</p>
+                                    <p><i class="fas fa-mobile-alt"></i> +34 612 345 678</p>
+                                    <p><i class="fas fa-envelope"></i> Ovejacinta@gmail.com</p>
+                                    <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 - 18:00</p>
 
-                        <div class="row mb-4">
-                            <div class="col-12">
-                                <textarea class="form-control mensaje" rows="4"
-                                    placeholder="Escibre aqui tu mensaje..." required></textarea>
+                                    <h3 class="mt-4">Síguenos</h3>
+                                    <div class="social-links">
+                                        <a href="#" class="me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                        <a href="#" class="me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                                        <a href="#" class="me-2"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                                        <a href="#" class="me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </section>
+            </main>
 
-                        <button type="submit" id="botonEnviar" class="btn btn-primary"
-                            style="align-items: center;">Enviar</button>
-                    </form>
-                </div>
 
-            </main> --> 
+
 
 
             <!-- Footer simple -->
@@ -435,7 +339,7 @@
         </div>
     </div>
     <script src="../static/js/usuario.js"></script>
-    <script src="../static/js/perfil.js"></script>
+    <script src="../static/js/contacto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
