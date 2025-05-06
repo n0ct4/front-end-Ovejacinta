@@ -61,14 +61,14 @@
                     <div class="container">
                         <h1 class="display-5 mb-3">¡Crea tu viaje soñado!</h1>
                         <p class="mb-4">
-                            Diseña una experiencia a tu medida, solo o acompañado. Ovejacinta te ayudará en cada paso del camino.
+                            Diseña una experiencia a tu medida, solo o acompañado. Ovejacinta te ayudará en cada paso
+                            del camino.
                         </p>
-                        <button type="button" class="btn btn-lg btn-primary px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-lg btn-primary px-4" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
                             <i class="fas fa-plus me-2"></i> Crear Viaje
                         </button>
                     </div>
-                
-
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
@@ -115,7 +115,7 @@
 
             <div class="container py-4" id="tusViajesContainer">
                 <p class="text lead">
-                    <br/>Este panel está diseñado para que puedas revivir tus aventuras, organizar
+                    <br />Este panel está diseñado para que puedas revivir tus aventuras, organizar
                     nuevas
                     salidas y tener bajo control todos los detalles de tus experiencias.
                     Y no te preocupes, no estás solo en el camino: <strong>Ovejacinta</strong>, nuestra simpática
@@ -136,24 +136,69 @@
                 <div class="carrusel-container">
                     <h2 class="carrusel-title">Inspírate para tu próximo viaje</h2>
                     <p class="carrusel-subtitle">
-                        Descubre las experiencias que otros viajeros han creado y encuentra ideas para tu próxima aventura.
+                        Descubre las experiencias que otros viajeros han creado y encuentra ideas para tu próxima
+                        aventura.
                     </p>
                     <div id="carruselViajes" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner carrusel-inner" id="carouselInner">
-                            <!-- Los items del carrusel se generarán aquí dinámicamente -->
                         </div>
-                        <button class="carousel-control-prev carrusel-control-prev" type="button" data-bs-target="#carruselViajes"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev carrusel-control-prev" type="button"
+                            data-bs-target="#carruselViajes" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next carrusel-control-next" type="button" data-bs-target="#carruselViajes"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next carrusel-control-next" type="button"
+                            data-bs-target="#carruselViajes" data-bs-slide="next">
                             <span class="carousel-control-next-icon">-></span>
                         </button>
                     </div>
                 </div>
             </div>
-
+            <div clas="row">
+                <div class="section-invitar text-center py-5 bg-light">
+                    <div class="container">
+                        <h1 class="display-5 mb-3">¡Invita a tus amigos!</h1>
+                        <p class="mb-4">
+                            Comparte la aventura con amigos. Ovejacinta te ayuda a coordinar el grupo.
+                        </p>
+                        <button type="button" class="btn btn-lg btn-invitar px-4" data-bs-toggle="modal"
+                            data-bs-target="#modalInvitar">
+                            <i class="fas fa-user-plus me-2"></i> Invitar oveColegas
+                        </button>
+                    </div>
+                    <div class="modal fade" id="modalInvitar" tabindex="-1" aria-labelledby="modalInvitarLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header modal-header-invitar">
+                                    <h1 class="modal-title fs-5 modal-title-invitar" id="modalInvitarLabel">Invita a tus amigos</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="formInvitarViaje">
+                                        <div class="mb-3">
+                                            <label for="selectViaje" class="form-label">Selecciona un viaje</label>
+                                            <select class="form-select" id="selectViaje" required>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="emailInvitado" class="form-label">Correo electrónico</label>
+                                            <input type="email" class="form-control" id="emailInvitado"
+                                                placeholder="amigo@ejemplo.com" required>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer text-center">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button id="btnEnviarInvitacion" type="button" class="btn btn-invitar">Enviar
+                                        invitación</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <footer class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
@@ -167,9 +212,6 @@
                 </div>
             </footer>
         </div>
-
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
         <script src="../static/js/usuario.js"></script>

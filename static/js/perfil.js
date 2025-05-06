@@ -1,3 +1,67 @@
+async function cambiarNombreUsuario() {
+    const nombreInput = document.querySelector('input[placeholder="Nombre de usuario"]');
+    const nuevoNombre = nombreInput.value.trim();
+    
+    if (!nuevoNombre) {
+        alert('Por favor ingresa un nombre de usuario válido');
+        return;
+    }
+
+    let userData;
+    try {
+        userData = JSON.parse(localStorage.getItem('userData'));
+        if (!userData?.id) {
+            throw new Error('Datos de usuario no encontrados');
+        }
+
+        const updateResponse = await fetch(`http://localhost:5065/api/Usuario/NombreUsuario`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${userData.token}`
+            },
+            body: JSON.stringify({ 
+                id: userData.id,
+                nombreUsuario: nuevoNombre,
+                correo: userData.correo
+            })
+        });
+
+        if (!updateResponse.ok) {
+            const errorData = await updateResponse.json().catch(() => ({}));
+            throw new Error(errorData.message || 'Error al actualizar el nombre');
+        }
+
+        const getResponse = await fetch(`http://localhost:5065/api/Usuario/Usuario/${userData.id}`, {
+            headers: {
+                'Authorization': `Bearer ${userData.token}`
+            }
+        });
+
+        if (!getResponse.ok) {
+            throw new Error('Error al obtener datos actualizados');
+        }
+
+        const updatedUser = await getResponse.json();
+
+        const newUserData = {
+            ...userData,
+            id: updatedUser.id,
+            username: updatedUser.nombreUsuario || updatedUser.username, 
+            correo: updatedUser.correo
+        };
+
+        localStorage.setItem('userData', JSON.stringify(newUserData));
+        nombreInput.value = newUserData.username
+
+    } catch (error) {
+        console.error('Error:', error);
+        alert(`Error: ${error.message}`);
+    }
+}
+
+document.getElementById('btnCambioPerfil').addEventListener('click', cambiarNombreUsuario);
+
 document.addEventListener('DOMContentLoaded', async function () {
     const userData = JSON.parse(localStorage.getItem('userData'));
     if (!userData) {
@@ -25,6 +89,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             })
         );
 
+        document.querySelector('input[placeholder="Nombre de usuario"]').value = userData.username || '';
         document.querySelector('input[placeholder="nombre"]').value = data.nombre || '';
         document.querySelector('input[placeholder="Apellido1"]').value = data.apellido1 || '';
         document.querySelector('input[placeholder="Apellido2"]').value = data.apellido2 || '';

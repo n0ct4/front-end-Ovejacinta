@@ -348,3 +348,9 @@ section {
     opacity: 1;
 }
 
+footer {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
+}

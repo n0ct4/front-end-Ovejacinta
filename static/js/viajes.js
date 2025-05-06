@@ -148,6 +148,85 @@ async function cargarTodosViajes() {
 
 /**
  * @description
+ * Función que se encarga de cargar en el select de la invitación a otros usuario
+ * , todos los viajes que tiene un usuario
+ * @async Es una función asíncrona 
+ * @returns Devuelve un relleno de datos de un select en base a todos los viajes que tiene un usuario
+ */
+async function cargarViajesEnInvitacion() {
+    try {
+        // Obtén el ID del usuario desde userData
+        const userData = JSON.parse(localStorage.getItem('userData')); // Asegúrate de que userData esté almacenado en localStorage
+        if (!userData || !userData.id) {
+            console.error("No se encontró el ID del usuario.");
+            return;
+        }
+
+        // Llama al endpoint para obtener los viajes
+        const response = await fetch(`http://localhost:5065/api/Viajes/Usuario/${userData.id}`);
+        if (!response.ok) {
+            throw new Error(`Error al obtener los viajes: ${response.statusText}`);
+        }
+
+        const viajes = await response.json();
+        const arrayViajes = viajes.contenido;
+
+        // Selecciona el elemento <select>
+        const selectViaje = document.getElementById('selectViaje');
+        selectViaje.innerHTML = ''; // Limpia el contenido previo
+
+        // Llena el <select> con las opciones de los viajes
+        arrayViajes.forEach(viaje => {
+            const option = document.createElement('option');
+            option.value = viaje.id; // Asume que cada viaje tiene un ID único
+            option.textContent = viaje.nombre; // Asume que cada viaje tiene un nombre
+            selectViaje.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Error al cargar los viajes en la invitación:", error);
+    }
+}
+
+/**
+ * @description
+ * Función que se encarga de enviar una invitación a otro usuario desde un botón dentro de un modal
+ * @async Es una función asíncrona 
+ */
+async function enviarInvitacion() {
+    try {
+        // Recogemos todos los datos necesarios del html para enviar la invitación
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        const viajeId = document.getElementById('selectViaje').value;
+        const email = document.getElementById('emailInvitado').value;
+
+        // Llamamos al endpoint de la API para enviar la invitación
+        const response = await fetch("http://localhost:5065/api/Usuario/Invitacion", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            },
+            body: JSON.stringify({
+                idViajeAsociado: viajeId,
+                idTuristaAnfitrion: userData.id,
+                correoUsuarioInvitado: email,
+                fechaEmision: new Date().toISOString()
+            })
+        });
+
+        if (response.ok) {
+            alert("Invitación enviada correctamente.");
+        } else {
+            alert("Error al enviar la invitación.");
+        }
+    }
+    catch (error) {
+        console.error("Error al enviar la invitación a otro usuario: ", error);
+    }
+}
+
+/**
+ * @description
  * Es una función que permite crear un viaje nuevo dentro de nuestro sistema
  * Se genera un modal que permite rellenar los datos típicos de un viaje dentro de nuestro sistema
  * @async Es una función asíncrona dentro del codigo
@@ -419,3 +498,6 @@ async function eliminarViaje(viajeId) {
 document.addEventListener('DOMContentLoaded', async () => {
     await cargarTodosViajes();
 });
+
+document.addEventListener('DOMContentLoaded', cargarViajesEnInvitacion);
+document.getElementById('btnEnviarInvitacion').addEventListener('click', enviarInvitacion);
