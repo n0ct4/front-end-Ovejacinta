@@ -49,7 +49,7 @@ function enviarRespuestas() {
     console.log("Redirigiendo a login...");
     // Espera 2 segundos antes de redirigir
     setTimeout(() => {
-        window.location.href = "../login.html"; // Ruta para que después de que se envíe el mensaje vaya a la página del login
+        window.location.href = "../perfil"; // Ruta para que después de que se envíe el mensaje vaya a la página del login
     }, 2000);
 }
 
