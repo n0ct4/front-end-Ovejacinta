@@ -112,3 +112,33 @@ footer {
     margin-bottom: 1rem;
     color: #dee2e6;
 }
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hover-info {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background: rgba(0, 0, 0, 0.85); 
+    color: white;
+    padding: 20px; 
+    text-align: center;
+    font-size: 18px; 
+    font-weight: bold; 
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    width: 80%; 
+    max-width: 300px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.image-wrapper:hover .hover-info {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05); 
+}
