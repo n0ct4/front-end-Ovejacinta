@@ -12,7 +12,6 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
     let pais = document.getElementById("pais").value;
     let comunidadA = document.getElementById("comunidad").value;
     let edad = parseInt(document.getElementById("edad").value);
-    let categoria = document.getElementById("categoria").value || null;
 
     let data = { 
         nombre: nombre, 
@@ -24,7 +23,6 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
         pais: pais, 
         comunidadA: comunidadA, 
         edad: edad, 
-        categoria: categoria
     };
 
     try {
