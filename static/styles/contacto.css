@@ -1,12 +1,13 @@
-    .cabecera-section {
+.cabecera-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     padding: 80px 0;
     margin-bottom: 50px;
     width: 100%;
-    }
-    
-    .info-card {
+    border-radius: 20px;
+}
+
+.info-card {
     border: none;
     border-radius: 10px;
     overflow: hidden;
@@ -14,65 +15,65 @@
     transition: transform 0.3s, box-shadow 0.3s;
     margin-bottom: 30px;
     height: 100%;
-    }
-    
-    .info-card:hover {
+}
+
+.info-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    }
-    
-    .info-card .card-body {
+}
+
+.info-card .card-body {
     padding: 30px;
-    }
-    
-    .info-card i {
+}
+
+.info-card i {
     font-size: 2.5rem;
     color: var(--secondary-color);
     margin-bottom: 20px;
-    }
-    
-    .team-section {
+}
+
+.team-section {
     background-color: var(--light-color);
     padding: 60px 0;
     width: 100%;
-    }
-    
-    .team-card {
+}
+
+.team-card {
     border: none;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     margin-bottom: 30px;
-    }
-    
-    .team-card:hover {
+}
+
+.team-card:hover {
     transform: translateY(-10px);
-    }
-    
-    .team-card img {
+}
+
+.team-card img {
     height: 250px;
     object-fit: cover;
     width: 100%;
-    }
-    
-    .team-card .card-body {
+}
+
+.team-card .card-body {
     padding: 20px;
     text-align: center;
-    }
-    
-    .contact-section {
+}
+
+.contact-section {
     padding: 60px 0;
-    }
-    
-    .section-title {
+}
+
+.section-title {
     position: relative;
     margin-bottom: 40px;
     color: var(--dark-color);
     text-align: center;
-    }
-    
-    .section-title:after {
+}
+
+.section-title:after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -81,9 +82,9 @@
     width: 80px;
     height: 3px;
     background: var(--secondary-color);
-    }
-    
-    .subtituloContacto {
+}
+
+.subtituloContacto {
     background-color: #5b9bd5;
     color: white;
     border-radius: 7px;
@@ -93,22 +94,22 @@
     padding: 5px 15px;
     margin: 20px auto;
     width: auto;
-    }
-    
-    .form-control {
+}
+
+.form-control {
     border-radius: 5px;
     padding: 12px 15px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     width: 100%;
-    }
-    
-    .form-control:focus {
+}
+
+.form-control:focus {
     border-color: var(--secondary-color);
     box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
-    }
-    
-    #botonEnviar {
+}
+
+#botonEnviar {
     background-color: #5b9bd5;
     border: none;
     padding: 12px 30px;
@@ -118,41 +119,41 @@
     transition: all 0.3s;
     display: block;
     margin: 20px auto;
-    }
-    
-    #botonEnviar:hover {
+}
+
+#botonEnviar:hover {
     background-color: #3f4f58;
     transform: translateY(-3px);
-    }
-    
-    .contact-info {
+}
+
+.contact-info {
     background-color: var(--light-color);
     border-radius: 10px;
     padding: 30px;
     height: 100%;
-    }
-    
-    .contact-info i {
+}
+
+.contact-info i {
     color: var(--secondary-color);
     margin-right: 10px;
     width: 20px;
     text-align: center;
-    }
-    
-    :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
+}
+
+:root {
+    --primary-color: #e3f2fd;
+    --secondary-color: #fff;
     --accent-color: #e74c3c;
     --light-color: #ecf0f1;
     --dark-color: #2c3e50;
-    }
-    
-    body {
+}
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
     background-color: #f8f9fa;
-    }
+}
 
 
 /*---------------------------------------*/
@@ -162,7 +163,7 @@
     overflow-y: auto;
 }
 
-.sidebar.minimized.scroll-vertical{
+.sidebar.minimized.scroll-vertical {
     width: 94%;
 }
 
@@ -180,7 +181,7 @@
 
 /*Para esconder el navabr*/
 .sidebar.minimized {
-    width: 80px; 
+    width: 80px;
     overflow: hidden;
     transition: all 0.3s ease;
 }
@@ -209,7 +210,7 @@
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
-    width: 80px; 
+    width: 80px;
     height: 16px;
 }
 
@@ -225,7 +226,7 @@
     gap: .65rem;
 }
 
-.botonColapse > div {
+.botonColapse>div {
     background: #000;
     height: 2px;
     width: 150%;
@@ -246,10 +247,6 @@
     transform: rotate(-45deg);
 }
 
-
-
-
-/*Estilos navbar sin minimizar*/
 .sidebar {
     background-color: #fff;
     min-height: 100vh;
@@ -289,9 +286,6 @@
     text-align: center;
 }
 
-/*--------------------------------------*/
-
-/*Footer*/
 footer {
     background-color: #fff;
     padding: 1.5rem;
@@ -302,9 +296,6 @@ footer {
     width: 94.70%;
 }
 
-
-
-/*Cajas perfil*/
 @media (min-width: 768px) {
 
 
@@ -312,9 +303,9 @@ footer {
         padding-left: 10%;
         padding-right: 10%;
     }
-    
-    
-    
+
+
+
     h3::after {
         margin-bottom: 8%;
         margin-top: 3%;
@@ -324,24 +315,20 @@ footer {
         height: 4px;
         background-color: #5e96bd;
     }
-    
+
     .subtituloContacto {
         width: 51%;
         margin-left: 24%;
         margin-top: 2%;
         margin-bottom: 7%;
     }
-    
+
     #botonEnviar {
         margin-left: 37%;
     }
-    
+
 }
 
-
-
-
-/* Tipografía */
 h1,
 h2,
 h3,
@@ -381,9 +368,26 @@ h2 {
     font-weight: normal;
 }
 
-/* Justificación del texto en párrafos */
 p {
     margin-bottom: 1rem;
     line-height: 1.8;
     text-align: justify;
+}
+
+.cabecera-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    color: #3b49df;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.cabecera-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    color: #333;
+    line-height: 1.8;
+    text-align: center;
 }

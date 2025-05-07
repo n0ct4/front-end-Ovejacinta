@@ -1,17 +1,3 @@
-document.addEventListener('DOMContentLoaded', async function () {
-    const userData = JSON.parse(localStorage.getItem('userData'));
-    if (!userData) {
-        window.location.href = "/login";
-    }
-});
-
-document.getElementById("btnGuardarViaje").addEventListener("click",
-    async function () {
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        await crearViajeNuevo(userData.id);
-        console.log("Viaje creado");
-        window.location.reload();
-    })
 
 /**
  * @description
@@ -31,77 +17,13 @@ async function obtenerNombreTurista(id) {
 }
 
 /**
- * Función que se encarga de cargar los viajes
- * de cada turista en el html desde una llamada a la API.
- * Muestra una card con el contenido de cada viaje que se destaca por:
- * Titulo, descripcion, creador del viaje, etc
- * Permite además acceder a las funciones de borrar y mostrar detalles del viaje
- */
-document.addEventListener('DOMContentLoaded', async function cargarViajes() {
-
-    try {
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        const response = await fetch(`http://localhost:5065/api/Viajes/Usuario/${userData.id}`);
-        const data = await response.json();
-        const viajes = data.contenido;
-        const container = document.getElementById('viajesContainer');
-        container.innerHTML = '';
-
-        viajes.forEach(async (viaje) => {
-            const fechaInicio = new Date(viaje.fechaInicioViaje).toLocaleDateString('es-ES', {
-                day: '2-digit', month: 'short', year: 'numeric'
-            });
-            const fechaFin = new Date(viaje.fechaFinalViaje).toLocaleDateString('es-ES', {
-                day: '2-digit', month: 'short', year: 'numeric'
-            });
-
-            const nombreTurista = await obtenerNombreTurista(viaje.idTuristaCreador);
-
-            const card = document.createElement('div');
-            card.className = 'mb-4';
-            card.innerHTML = `
-                <div class="card viaje-card shadow-sm rounded-4 border-0 p-4">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="fw-semibold text-dark m-0">${viaje.nombre}</h4>
-                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">España</span>
-                    </div>
-                    <div class="d-flex justify-content-between text-muted small mb-3">
-                        <div><i class="fas fa-calendar-alt me-2"></i>${fechaInicio} - ${fechaFin}</div>
-                        <div><i class="fas fa-users me-2"></i>${nombreTurista}</div>
-                    </div>
-                    <p class="text-secondary mb-4">${viaje.descripcion}</p>
-                    <div class="d-flex justify-content-end gap-2">
-
-                        <button class="btn btn-outline-danger rounded-pill px-3" onclick="eliminarViaje(${viaje.id})">
-                            <i class="fas fa-trash me-1"></i>
-                        </button>
-
-                        <button class="btn btn-secondary rounded-pill px-3" onclick="editarViaje(${viaje.id})">
-                            <i class="fas fa-edit me-1"></i>
-                        </button>
-                        <button class="btn btn-primary rounded-pill px-3" onclick="verDetalles(${viaje.id})">
-                            <i class="fas fa-eye me-1"></i>Ver detalles
-                        </button>
-
-                    </div>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-    }
-    catch (error) {
-        console.log("Error:", error);
-    }
-});
-
-/**
  * Función que se encarga de cargar todos los viajes que existen actualmente en la base de datos
  * Hace una llamada al endpoint de Viajes
  * Mete en un carrusel las cards que usamos para mostrar los viajes
  */
 async function cargarTodosViajes() {
     try {
-        const respuesta = await fetch(`http://localhost:5065/api/Viajes`); 
+        const respuesta = await fetch(`http://localhost:5065/api/Viajes`);
         const data = await respuesta.json();
         const viajes = data.contenido;
 
@@ -495,9 +417,96 @@ async function eliminarViaje(viajeId) {
     window.location.reload();
 }
 
+async function cargarViajesInvitados(){
+    try {
+        
+    } catch (error) {
+        console.error("Error al cargar los viajes en los que estás invitado:", error);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     await cargarTodosViajes();
 });
 
 document.addEventListener('DOMContentLoaded', cargarViajesEnInvitacion);
 document.getElementById('btnEnviarInvitacion').addEventListener('click', enviarInvitacion);
+
+document.addEventListener('DOMContentLoaded', async function () {
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    if (!userData) {
+        window.location.href = "/login";
+    }
+});
+
+document.getElementById("btnGuardarViaje").addEventListener("click",
+    async function () {
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        await crearViajeNuevo(userData.id);
+        console.log("Viaje creado");
+        window.location.reload();
+    });
+
+/**
+* Función que se encarga de cargar los viajes
+* de cada turista en el html desde una llamada a la API.
+* Muestra una card con el contenido de cada viaje que se destaca por:
+* Titulo, descripcion, creador del viaje, etc
+* Permite además acceder a las funciones de borrar y mostrar detalles del viaje
+*/
+document.addEventListener('DOMContentLoaded', async function cargarViajes() {
+
+    try {
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        const response = await fetch(`http://localhost:5065/api/Viajes/Usuario/${userData.id}`);
+        const data = await response.json();
+        const viajes = data.contenido;
+        const container = document.getElementById('viajesContainer');
+        container.innerHTML = '';
+
+        viajes.forEach(async (viaje) => {
+            const fechaInicio = new Date(viaje.fechaInicioViaje).toLocaleDateString('es-ES', {
+                day: '2-digit', month: 'short', year: 'numeric'
+            });
+            const fechaFin = new Date(viaje.fechaFinalViaje).toLocaleDateString('es-ES', {
+                day: '2-digit', month: 'short', year: 'numeric'
+            });
+
+            const nombreTurista = await obtenerNombreTurista(viaje.idTuristaCreador);
+
+            const card = document.createElement('div');
+            card.className = 'mb-4';
+            card.innerHTML = `
+                <div class="card viaje-card shadow-sm rounded-4 border-0 p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-semibold text-dark m-0">${viaje.nombre}</h4>
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill">España</span>
+                    </div>
+                    <div class="d-flex justify-content-between text-muted small mb-3">
+                        <div><i class="fas fa-calendar-alt me-2"></i>${fechaInicio} - ${fechaFin}</div>
+                        <div><i class="fas fa-users me-2"></i>${nombreTurista}</div>
+                    </div>
+                    <p class="text-secondary mb-4">${viaje.descripcion}</p>
+                    <div class="d-flex justify-content-end gap-2">
+
+                        <button class="btn btn-outline-danger rounded-pill px-3" onclick="eliminarViaje(${viaje.id})">
+                            <i class="fas fa-trash me-1"></i>
+                        </button>
+
+                        <button class="btn btn-secondary rounded-pill px-3" onclick="editarViaje(${viaje.id})">
+                            <i class="fas fa-edit me-1"></i>
+                        </button>
+                        <button class="btn btn-primary rounded-pill px-3" onclick="verDetalles(${viaje.id})">
+                            <i class="fas fa-eye me-1"></i>Ver detalles
+                        </button>
+
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+    catch (error) {
+        console.log("Error:", error);
+    }
+});
