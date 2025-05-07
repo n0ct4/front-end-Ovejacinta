@@ -15,22 +15,29 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 sidebar p-0">
-                <div class="sidebar-brand text-center py-3">
-                    <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Logo Ovejacinta" class="img-fluid"
-                        style="max-width: 130px;">
+            <div class="col-md-3 col-lg-2 sidebar p-0" id="sidebar">
+                <div class="sidebar-brand text-center">
+                    <div class="row">
+                        <button class="botonColapse" id="menu-boton">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </button>
+                    </div>
+                    <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Usuario"
+                        class="rounded-circle mb-2 align-items" style="width: 80px; height: 80px;">
                 </div>
 
-                <div class="px-3 pb-3">
-                    <div class="text-center mb-4" id="btnPerfil">
-                        <img src="../static/img/images.jpg" alt="Foto de perfil"
-                            class="rounded-circle mb-2 img-thumbnail" style="width: 80px; height: 80px;">
-                        <h6 class="mb-0 nombre-bienvenida"></h6>
-                        <small class="text-muted d-block">Turista</small>
+                <div class="p-3">
+                    <div class="text-center mb-4 mt-3">
+                        <img src="../static/img/images.jpg" alt="Usuario" class="rounded-circle mb-2"
+                            style="width: 80px; height: 80px;">
+                        <h6 class="mb-0 nombre-bienvenida" id=""></h6>
+                        <small class="text-muted">Turista</small>
                     </div>
 
                     <nav class="nav flex-column">
-                        <a href="/usuario" class="sidebar-item active">
+                        <a href="/usuario" class="sidebar-item">
                             <i class="fas fa-home me-2"></i>Inicio
                         </a>
                         <a href="/perfil" class="sidebar-item">
@@ -42,7 +49,7 @@
                         <a href="/turismo" class="sidebar-item">
                             <i class="fas fa-map-marked-alt me-2"></i>Turismo
                         </a>
-                        <a href="/contacto" class="sidebar-item">
+                        <a href="/contacto" class="sidebar-item active">
                             <i class="fas fa-envelope me-2"></i>Contacto
                         </a>
                         <a href="#" class="sidebar-item text-danger">
@@ -53,7 +60,7 @@
             </div>
 
             <!-- Contenido principal -->
-            <main class="col-md-9 col-lg-10 main-content px-4 py-3">
+            <main class="col-md-9 col-lg-10 main-content px-4 py-3 scroll-vertical">
                 <div class="user-welcome mb-4">
                     <h4 class="fw-bold user-welcome"></h4>
                     <p class="text-muted">¿Qué te gustaría hacer hoy?</p>
@@ -229,20 +236,21 @@
                         </div>
                     </div>
                 </div>
-                <!-- Footer -->
-                <footer class="container-fluid bg-white py-3 border-top">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <span class="text-muted">© 2025 Ovejacinta. Todos los derechos reservados.</span>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="#" class="text-decoration-none text-muted me-3">Términos</a>
-                            <a href="#" class="text-decoration-none text-muted me-3">Privacidad</a>
-                            <a href="#" class="text-decoration-none text-muted">Contacto</a>
-                        </div>
-                    </div>
-                </footer>
+
             </main>
+            <!-- Footer -->
+            <footer class="container-fluid bg-white py-3 border-top">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <span class="text-muted">© 2025 Ovejacinta. Todos los derechos reservados.</span>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#" class="text-decoration-none text-muted me-3">Términos</a>
+                        <a href="#" class="text-decoration-none text-muted me-3">Privacidad</a>
+                        <a href="#" class="text-decoration-none text-muted">Contacto</a>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
     <script src="../static/js/usuario.js"></script>

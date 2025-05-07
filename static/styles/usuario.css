@@ -42,9 +42,6 @@ body {
     text-align: center;
 }
 
-.main-content {
-    padding: 2rem;
-}
 
 .user-welcome {
     background-color: #fff;
@@ -61,10 +58,13 @@ footer {
     margin-top: 2rem;
 }
 
+.main-content.expanded {
+    width: 94.70%;
+}
+
 @media (max-width: 768px) {
-    .sidebar {
-        min-height: auto;
-    }
+
+
 }
 
 .action-card {
@@ -141,4 +141,140 @@ footer {
 .image-wrapper:hover .hover-info {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.05); 
+}
+
+
+/*Estilos para colpase del navbar*/
+/*Para poder hacer scroll*/
+.scroll-vertical {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar.minimized.scroll-vertical{
+    width: 94%;
+}
+
+.scroll-horizontal {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.scroll-both {
+    max-height: 400px;
+    max-width: 120%;
+    overflow: auto;
+}
+
+
+/*Para esconder el navabr*/
+.sidebar.minimized {
+    width: 80px; 
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Oculta todo excepto logo y botón */
+.sidebar.minimized .p-3,
+.sidebar.minimized nav,
+.sidebar.minimized .user-info {
+    display: none !important;
+}
+
+/*Estilos del sidebar cuando se encuentra minimizado*/
+.sidebar.minimized .botonColapse {
+    margin-top: 11%;
+    margin-left: -15%;
+
+}
+
+.sidebar.minimized .rounded-circle {
+    display: none !important;
+}
+
+.sidebar.minimized .sidebar-brand {
+    margin-top: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    width: 80px; 
+    height: 16px;
+}
+
+
+.botonColapse {
+    display: flex;
+    margin-left: 74%;
+    margin-top: -5%;
+    flex-direction: column;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    background: transparent;
+    gap: .65rem;
+}
+
+.botonColapse > div {
+    background: #000;
+    height: 2px;
+    width: 150%;
+    border-radius: 5px;
+    transition: all .5s;
+    transform-origin: left;
+}
+
+.sidebar:not(.minimized) .botonColapse:hover div:first-child {
+    transform: rotate(45deg);
+}
+
+.sidebar:not(.minimized) .botonColapse:hover div:nth-child(2) {
+    opacity: 0;
+}
+
+.sidebar:not(.minimized) .botonColapse:hover div:last-child {
+    transform: rotate(-45deg);
+}
+
+
+
+
+/*Estilos navbar sin minimizar*/
+.sidebar {
+    background-color: #fff;
+    min-height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-brand {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    color: #333;
+}
+
+.sidebar-item {
+    padding: 0.75rem 1rem;
+    color: #555;
+    border-radius: 5px;
+    margin: 0.25rem 0.5rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+}
+
+.sidebar-item:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.sidebar-item.active {
+    background-color: #e9f5ff;
+    color: #0d6efd;
+}
+
+.sidebar-item i {
+    width: 20px;
+    margin-right: 10px;
+    text-align: center;
 }
