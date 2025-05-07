@@ -162,7 +162,6 @@ body {
 
 .carrusel-control-prev:hover,
 .carrusel-control-next:hover {
-    background-color: white;
     opacity: 1;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
@@ -175,9 +174,9 @@ body {
     background-image: none;
 }
 
-.carrusel-control-prev-icon::before {
-    content: '←' !important;
-    color: #4a6bff !important;
+.carrusel-control-prev-icon {
+    content: '←';
+    color: #4a6bff;
     font-size: 24px;
     font-weight: bold;
 }
