@@ -241,18 +241,19 @@ async function mostrarInvitaciones() {
         
         // Obtener información de los viajes asociados
         const viajesInfo = await obtenerInfoViajes(invitaciones);
-
-        invitaciones.forEach(invitacion => {
+        invitaciones.forEach(async (invitacion) => {
             const viaje = viajesInfo.find(v => v.id === invitacion.idViajeAsociado) || { nombre: 'Viaje desconocido' };
             const fecha = new Date(invitacion.fechaEmision).toLocaleDateString('es-ES');
-            
+            const respuestaNombreUsuarioAnfitrion = await fetch(`http://localhost:5065/api/Usuario/Usuario/${invitacion.idTuristaAnfitrion}`)
+            const usuarioAnfitrion = await respuestaNombreUsuarioAnfitrion.json();
+
             const card = document.createElement('div');
             card.className = 'invitacion-card mb-3 p-3 border rounded';
             card.innerHTML = `
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
                         <h6 class="mb-1">Invitación para: <strong>${viaje.nombre}</strong></h6>
-                        <small class="text-muted">De: ${invitacion.correoUsuarioAnfitrion || 'Anfitrión'}</small>
+                        <small class="text-muted">De: ${usuarioAnfitrion.nombreUsuario || 'Anfitrión'}</small>
                     </div>
                     <small class="text-muted">${fecha}</small>
                 </div>
