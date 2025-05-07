@@ -21,7 +21,7 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
         apellido1: apellido1, 
         apellido2: apellido2, 
         pais: pais, 
-        comunidadA: comunidadA, 
+        comunidadAutonoma: comunidadA, 
         edad: edad, 
     };
 
