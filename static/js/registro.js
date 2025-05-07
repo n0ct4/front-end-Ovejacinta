@@ -23,6 +23,7 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
         pais: pais, 
         comunidadAutonoma: comunidadA, 
         edad: edad, 
+        categoria: 0
     };
 
     try {

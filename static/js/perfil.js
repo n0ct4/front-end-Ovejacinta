@@ -67,6 +67,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!userData) {
         window.location.href = "/login";
     }
+
+    // Implementacion de notificaciones al cargar la pagina
+
+    mostrarInvitaciones();
+    
+    // Actualizar cada 30 segundos (opcional)
+    setInterval(actualizarInvitaciones, 30000);
 });
 
 /**
@@ -183,5 +190,219 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
         
     });
-
 });
+
+/**
+ * Carga las invitaciones pendientes del usuario actual
+ */
+async function cargarInvitacionesPendientes() {
+    try {
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        if (!userData?.id) {
+            console.error("Usuario no identificado");
+            return [];
+        }
+
+        const response = await fetch(`http://localhost:5065/api/Usuario/Invitaciones?idTurista=${userData.id}`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            }
+        });
+
+        if (!response.ok) throw new Error("Error al obtener invitaciones o no hay invitaciones");
+
+        const data = await response.json();
+        return data.contenido || [];
+    } catch (error) {
+        console.error("Error:", error);
+        return [];
+    }
+}
+
+/**
+ * Muestra las invitaciones en el contenedor
+ */
+async function mostrarInvitaciones() {
+    const container = document.getElementById('invitacionesContainer');
+    if (!container) return;
+
+    try {
+        // Mostrar spinner de carga
+        container.innerHTML = '<div class="text-center py-3"><div class="spinner-border text-primary" role="status"></div></div>';
+        
+        const invitaciones = await cargarInvitacionesPendientes();
+        
+        if (invitaciones.length === 0) {
+            container.innerHTML = '<p class="text-muted text-center">No tienes invitaciones pendientes</p>';
+            return;
+        }
+
+        container.innerHTML = '';
+        
+        // Obtener información de los viajes asociados
+        const viajesInfo = await obtenerInfoViajes(invitaciones);
+
+        invitaciones.forEach(invitacion => {
+            const viaje = viajesInfo.find(v => v.id === invitacion.idViajeAsociado) || { nombre: 'Viaje desconocido' };
+            const fecha = new Date(invitacion.fechaEmision).toLocaleDateString('es-ES');
+            
+            const card = document.createElement('div');
+            card.className = 'invitacion-card mb-3 p-3 border rounded';
+            card.innerHTML = `
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h6 class="mb-1">Invitación para: <strong>${viaje.nombre}</strong></h6>
+                        <small class="text-muted">De: ${invitacion.correoUsuarioAnfitrion || 'Anfitrión'}</small>
+                    </div>
+                    <small class="text-muted">${fecha}</small>
+                </div>
+            `;
+
+            // Crear los botones
+            const accionesDiv = document.createElement('div');
+            accionesDiv.className = 'mt-3 d-flex justify-content-end gap-2';
+
+            const btnRechazar = document.createElement('button');
+            btnRechazar.className = 'btn btn-sm btn-outline-danger';
+            btnRechazar.textContent = 'Rechazar';
+            btnRechazar.onclick = () => rechazarInvitacion(invitacion.id);
+
+            const btnAceptar = document.createElement('button');
+            btnAceptar.className = 'btn btn-sm btn-success';
+            btnAceptar.textContent = 'Aceptar';
+            btnAceptar.onclick = () => aceptarInvitacion(invitacion);
+
+            // Agregar botones al contenedor
+            accionesDiv.appendChild(btnRechazar);
+            accionesDiv.appendChild(btnAceptar);
+
+            // Agregar contenedor de botones a la tarjeta
+            card.appendChild(accionesDiv);
+
+            container.appendChild(card);
+        });
+    } catch (error) {
+        console.error("Error al mostrar invitaciones:", error);
+        container.innerHTML = `
+            <div class="alert alert-danger">
+                Error al cargar invitaciones: ${error.message}
+                <button onclick="mostrarInvitaciones()" class="btn btn-sm btn-link">Reintentar</button>
+            </div>
+        `;
+    }
+}
+
+/**
+ * Obtiene información de los viajes asociados a las invitaciones
+ */
+async function obtenerInfoViajes(invitaciones) {
+    try {
+        const idsViajes = [...new Set(invitaciones.map(i => i.idViajeAsociado))];
+        const promises = idsViajes.map(id => 
+            fetch(`http://localhost:5065/api/Viajes/Detail?idViaje=${id}`)
+                .then(r => r.json())
+                .then(data => ({ 
+                    id, 
+                    nombre: data.contenido?.nombre || 'Viaje desconocido'
+                }))
+                .catch(() => ({ id, nombre: 'Viaje desconocido' }))
+        );
+        return await Promise.all(promises);
+    } catch (error) {
+        console.error("Error al obtener info de viajes:", error);
+        return [];
+    }
+}
+
+/**
+ * Acepta una invitación
+ */
+async function aceptarInvitacion(invitacion) {
+    if (!confirm('¿Estás seguro de aceptar esta invitación?')) return;
+    
+    try {
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        // Crear el objeto con la estructura exacta que espera el backend
+        const invitacionData = {
+            "correoUsuarioInvitado": userData.correo, // Asumo que el correo está en userData
+            "idViajeAsociado": invitacion.idViajeAsociado,
+            "fechaEmision": new Date().toISOString() // Formato: "2023-05-07T07:13:45.931Z"
+        };
+
+        const response = await fetch("http://localhost:5065/api/Usuario/AceptarInvitacion", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('authToken')}`
+            },
+            body: JSON.stringify(invitacionData)
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(errorText || "Error al aceptar la invitación");
+        }
+
+        alert("✅ Invitación aceptada correctamente");
+        await mostrarInvitaciones(); // Actualizar la lista
+        
+    } catch (error) {
+        console.error("Error al aceptar invitación:", error);
+        alert(`❌ Error: ${error.message}`);
+    }
+}
+
+/**
+ * Rechaza una invitación
+ */
+async function rechazarInvitacion(idInvitacion) {
+    if (!confirm('¿Rechazar esta invitación?')) return;
+
+    try {
+        // Nota: Asumiendo que tienes un endpoint para rechazar invitaciones
+        const response = await fetch('http://localhost:5065/api/Usuario/RechazarInvitacion', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            },
+            body: JSON.stringify({
+                id: idInvitacion,
+                estado: 2 // 2 = Rechazada
+            })
+        });
+
+        if (!response.ok) throw new Error(await response.text());
+
+        alert('Invitación rechazada correctamente');
+        await mostrarInvitaciones();
+    } catch (error) {
+        console.error("Error al rechazar invitación:", error);
+        alert('Error: ' + error.message);
+    }
+}
+
+/**
+ * Actualiza la lista de invitaciones
+ */
+async function actualizarInvitaciones() {
+    const container = document.getElementById('invitacionesContainer');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="text-center py-3">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </div>
+    `;
+    
+    await mostrarInvitaciones();
+}
+
+// Hacer funciones disponibles globalmente
+window.aceptarInvitacion = aceptarInvitacion;
+window.rechazarInvitacion = rechazarInvitacion;
+window.actualizarInvitaciones = actualizarInvitaciones;
+
