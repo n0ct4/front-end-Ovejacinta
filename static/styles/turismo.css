@@ -5,17 +5,29 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
 }
 
 /* Diseño del contenedor y las filas */
 .container-fluid {
     width: 100%;
-    min-height: 100vh;
+    flex: 1 0 auto;
 }
 
 .row {
@@ -190,6 +202,40 @@ img {
     padding: 1rem;
 }
 
+/* Estilos del footer */
+footer {
+    flex-shrink: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #dee2e6;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+footer .row {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #333;
+}
+
 /* Estilos responsivos */
 @media (max-width: 992px) {
 
@@ -237,6 +283,16 @@ img {
     .sidebar {
         min-height: auto;
     }
+
+    /* Ajustes del footer para móviles */
+    footer {
+        text-align: center;
+    }
+
+    footer .text-md-end {
+        text-align: center !important;
+        margin-top: 0.5rem;
+    }
 }
 
 /* Carrusel */
@@ -256,7 +312,7 @@ section {
 /* Galería de fotos */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
@@ -297,7 +353,7 @@ section {
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     display: flex;
     gap: 10px;
 }
@@ -309,12 +365,12 @@ section {
 /* Para ajustar las posiciones de los botones*/
 #lightbox #prev {
     position: relative;
-    left: -50px; 
+    left: -50px;
 }
 
 #lightbox #next {
     position: relative;
-    right: -50px; 
+    right: -50px;
 }
 
 #lightbox #close {
@@ -348,9 +404,18 @@ section {
     opacity: 1;
 }
 
-footer {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-top: 1px solid #eee;
-    margin-top: 2rem;
+/* Ajustes para evitar scroll después del footer */
+.main-wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajustes para la última sección antes del footer */
+section:last-of-type {
+    margin-bottom: 0;
+}
+
+.main-content>div:last-child {
+    margin-bottom: 0;
 }
