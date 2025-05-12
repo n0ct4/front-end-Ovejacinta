@@ -51,11 +51,6 @@
     transform: translateY(-10px);
 }
 
-.team-card img {
-    height: 250px;
-    object-fit: cover;
-    width: 100%;
-}
 
 .team-card .card-body {
     padding: 20px;
@@ -327,6 +322,13 @@ footer {
         margin-left: 37%;
     }
 
+    .ImagenEquipo {
+        height: 400px; 
+        width: 800px; 
+        margin-left: 17%; 
+        margin-top: 5%; 
+        margin-bottom: 5%
+    }
 }
 
 h1,

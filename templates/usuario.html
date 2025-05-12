@@ -60,197 +60,213 @@
             </div>
 
             <!-- Contenido principal -->
-            <main class="col-md-9 col-lg-10 main-content px-4 py-3 scroll-vertical">
-                <div class="user-welcome mb-4">
-                    <h4 class="fw-bold user-welcome"></h4>
-                    <p class="text-muted">¿Qué te gustaría hacer hoy?</p>
-                </div>
+            <div class="col-md-9 col-lg-10 main-content">
 
-                <!-- Acciones rápidas -->
-                <div class="row g-3 mb-4">
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm action-card bg-primary text-white">
-                            <div class="card-body text-center">
-                                <i class="fas fa-plus-circle fa-3x mb-3"></i>
-                                <h5>Crear nuevo viaje</h5>
-                                <p class="small">Planifica tu próxima aventura</p>
-                                <a href="./viajes" class="btn btn-light btn-sm">Comenzar</a>
-                            </div>
-                        </div>
+
+                <main class="row px-4 py-3 scroll-vertical">
+                    <div class="user-welcome mb-4">
+                        <h4 class="fw-bold user-welcome"></h4>
+                        <p class="text-muted">¿Qué te gustaría hacer hoy?</p>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm action-card bg-success text-white">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
-                                <h5>Explorar destinos</h5>
-                                <p class="small">Descubre lugares increíbles</p>
-                                <a href="/turismo" class="btn btn-light btn-sm">Explorar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm action-card bg-primary-subtle text-dark">
-                            <div class="card-body text-center">
-                                <i class="fas fa-users fa-3x mb-3"></i>
-                                <h5>Invitar amigos</h5>
-                                <p class="small">Comparte la experiencia</p>
-                                <a href="#" class="btn btn-dark btn-sm">Invitar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Destinos destacados -->
-                <div class="card border-0 shadow-sm mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="card-title mb-0">
-                                <i class="fas fa-star text-warning me-2"></i>Destinos destacados
-                            </h5>
-                            <a href="/turismo" class="small">Ver todos</a>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <div class="destination-card">
-                                    <img src="https://via.placeholder.com/300x200?text=Esteban+de+Gormaz"
-                                        class="img-fluid rounded mb-2" alt="Destino 1">
-                                    <h6>San Esteban de Gormaz</h6>
-                                    <p class="small text-muted">Descubre este pueblo histórico</p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                    <!-- Acciones rápidas -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm action-card bg-primary text-white">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-plus-circle fa-3x mb-3"></i>
+                                    <h5>Crear nuevo viaje</h5>
+                                    <p class="small">Planifica tu próxima aventura</p>
+                                    <a href="./viajes" class="btn btn-light btn-sm">Comenzar</a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="destination-card">
-                                    <img src="https://via.placeholder.com/300x200?text=Ruta+del+Vino"
-                                        class="img-fluid rounded mb-2" alt="Destino 2">
-                                    <h6>Ruta del Vino</h6>
-                                    <p class="small text-muted">Degustaciones y paisajes</p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm action-card bg-success text-white">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                                    <h5>Explorar destinos</h5>
+                                    <p class="small">Descubre lugares increíbles</p>
+                                    <a href="/turismo" class="btn btn-light btn-sm">Explorar</a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="destination-card">
-                                    <img src="https://via.placeholder.com/300x200?text=Castillo+medieval"
-                                        class="img-fluid rounded mb-2" alt="Destino 3">
-                                    <h6>Castillo medieval</h6>
-                                    <p class="small text-muted">Viaje al pasado</p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm action-card bg-primary-subtle text-dark">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-users fa-3x mb-3"></i>
+                                    <h5>Invitar amigos</h5>
+                                    <p class="small">Comparte la experiencia</p>
+                                    <a href="#" class="btn btn-dark btn-sm">Invitar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div><br></div>
-                <div><br></div>
+                    <!-- Destinos destacados -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-star text-warning me-2"></i>Destinos destacados
+                                </h5>
+                                <a href="/turismo" class="small">Ver todos</a>
+                            </div>
 
-
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="card-title mb-0">
-                                <i class="fas fa-calendar-alt text-info me-2"></i>Tus próximos viajes
-                            </h5>
-                            <a href="./viajes" class="small">Ver todos</a>
-                        </div>
-
-                        <div id="proximosViajesContainer">
-                            <div class="empty-trips">
-                                <i class="fas fa-calendar-times"></i>
-                                <p>Cargando tus viajes...</p>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="destination-card">
+                                        <img src="https://via.placeholder.com/300x200?text=Esteban+de+Gormaz"
+                                            class="img-fluid rounded mb-2" alt="Destino 1">
+                                        <h6>San Esteban de Gormaz</h6>
+                                        <p class="small text-muted">Descubre este pueblo histórico</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="destination-card">
+                                        <img src="https://via.placeholder.com/300x200?text=Ruta+del+Vino"
+                                            class="img-fluid rounded mb-2" alt="Destino 2">
+                                        <h6>Ruta del Vino</h6>
+                                        <p class="small text-muted">Degustaciones y paisajes</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="destination-card">
+                                        <img src="https://via.placeholder.com/300x200?text=Castillo+medieval"
+                                            class="img-fluid rounded mb-2" alt="Destino 3">
+                                        <h6>Castillo medieval</h6>
+                                        <p class="small text-muted">Viaje al pasado</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Sobre Ovejacinta -->
-                <div class="card border-0 shadow-sm mt-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="card-title mb-0">
+                    <div><br></div>
+                    <div><br></div>
 
-                                <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Logo Ovejacinta"
-                                    class="img-fluid" style="max-width: 100px;">
-                                Conoce a Ovejacinta
-                            </h5>
+
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-calendar-alt text-info me-2"></i>Tus próximos viajes
+                                </h5>
+                                <a href="./viajes" class="small">Ver todos</a>
+                            </div>
+
+                            <div id="proximosViajesContainer">
+                                <div class="empty-trips">
+                                    <i class="fas fa-calendar-times"></i>
+                                    <p>Cargando tus viajes...</p>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            Ovejacinta es tu asistente virtual de confianza, dedicada a acompañarte en cada aventura y
-                            ayudarte a planificar tus viajes. Con una personalidad cálida y llena de consejos útiles, te
-                            guía en la exploración de nuevos destinos, recordándote fechas importantes y ofreciéndote
-                            ideas
-                            para tus próximas escapadas. Su pasión por el turismo y el conocimiento de los lugares más
-                            sorprendentes la convierten en la compañera ideal para tus viajes.
-                        </p>
-                        <p>
-                            Descubre cómo Ovejacinta puede transformar tu experiencia de viaje, haciendo que cada salida
-                            sea única e inolvidable.
-                        </p>
                     </div>
-                </div>
-                <div class="card border-0 shadow-sm mt-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="card-title mb-0">
-                                <i class="fas fa-images text-warning me-2"></i>¿Preparado para tu nueva aventura?
-                            </h5>
-                        </div>
-                        <div class="row">
-                            <p>A continuación te mostramos las diferentes versiones de Ovejacinta la asistente virtuale
-                                que podrás
-                                encontrar en la aplicación. Cada una de ellas está diseñada para acompañar al usuario y
-                                darle una sensación distinta en función de sus gustos.
+
+                    <!-- Sobre Ovejacinta -->
+                    <div class="card border-0 shadow-sm mt-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">
+
+                                    <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Logo Ovejacinta"
+                                        class="img-fluid" style="max-width: 100px;">
+                                    Conoce a Ovejacinta
+                                </h5>
+                            </div>
+                            <p>
+                                Ovejacinta es tu asistente virtual de confianza, dedicada a acompañarte en cada aventura
+                                y
+                                ayudarte a planificar tus viajes. Con una personalidad cálida y llena de consejos
+                                útiles, te
+                                guía en la exploración de nuevos destinos, recordándote fechas importantes y
+                                ofreciéndote
+                                ideas
+                                para tus próximas escapadas. Su pasión por el turismo y el conocimiento de los lugares
+                                más
+                                sorprendentes la convierten en la compañera ideal para tus viajes.
+                            </p>
+                            <p>
+                                Descubre cómo Ovejacinta puede transformar tu experiencia de viaje, haciendo que cada
+                                salida
+                                sea única e inolvidable.
                             </p>
                         </div>
-                        <div class="row g-3">
-                            <div class="col-md-4 image-wrapper">
-                                <img src="../static/img/oveja_aventurera.png" class="img-fluid rounded" alt="Imagen 1">
-                                <div class="hover-info">Oveja Aventurera</div>
+                    </div>
+                    <div class="card border-0 shadow-sm mt-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-images text-warning me-2"></i>¿Preparado para tu nueva aventura?
+                                </h5>
                             </div>
-                            <div class="col-md-4 image-wrapper">
-                                <img src="../static/img/oveja_senderismo.png" class="img-fluid rounded" alt="Imagen 2">
-                                <div class="hover-info">Oveja Senderista</div>
+                            <div class="row">
+                                <p>A continuación te mostramos las diferentes versiones de Ovejacinta la asistente
+                                    virtuale
+                                    que podrás
+                                    encontrar en la aplicación. Cada una de ellas está diseñada para acompañar al
+                                    usuario y
+                                    darle una sensación distinta en función de sus gustos.
+                                </p>
                             </div>
-                            <div class="col-md-4 image-wrapper">
-                                <img src="../static/img/oveja_dedo.png" class="img-fluid rounded" alt="Imagen 3">
-                                <div class="hover-info">Oveja Juzgadora</div>
+                            <div class="row g-3">
+                                <div class="col-md-4 image-wrapper">
+                                    <img src="../static/img/oveja_aventurera.png" class="img-fluid rounded"
+                                        alt="Imagen 1">
+                                    <div class="hover-info">Oveja Aventurera</div>
+                                </div>
+                                <div class="col-md-4 image-wrapper">
+                                    <img src="../static/img/oveja_senderismo.png" class="img-fluid rounded"
+                                        alt="Imagen 2">
+                                    <div class="hover-info">Oveja Senderista</div>
+                                </div>
+                                <div class="col-md-4 image-wrapper">
+                                    <img src="../static/img/oveja_dedo.png" class="img-fluid rounded" alt="Imagen 3">
+                                    <div class="hover-info">Oveja Juzgadora</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-md-4 image-wrapper">
-                                <img src="../static/img/oveja_motorista.png" class="img-fluid rounded" alt="Imagen 1">
-                                <div class="hover-info">Oveja Motorista</div>
-                            </div>
-                            <div class="col-md-4 image-wrapper">
-                                <img src="../static/img/oveja_vino.png" class="img-fluid rounded" alt="Imagen 2">
-                                <div class="hover-info">Oveja Disfrutona</div>
-                            </div>
-                            <div class="col-md-4 image-wrapper">
-                                <img src="../static/img/oveja_gastronomia.png" class="img-fluid rounded"
-                                    alt="Imagen 3">
-                                <div class="hover-info">Oveja Glotona</div>
+                            <div class="row g-3">
+                                <div class="col-md-4 image-wrapper">
+                                    <img src="../static/img/oveja_motorista.png" class="img-fluid rounded"
+                                        alt="Imagen 1">
+                                    <div class="hover-info">Oveja Motorista</div>
+                                </div>
+                                <div class="col-md-4 image-wrapper">
+                                    <img src="../static/img/oveja_vino.png" class="img-fluid rounded" alt="Imagen 2">
+                                    <div class="hover-info">Oveja Disfrutona</div>
+                                </div>
+                                <div class="col-md-4 image-wrapper">
+                                    <img src="../static/img/oveja_gastronomia.png" class="img-fluid rounded"
+                                        alt="Imagen 3">
+                                    <div class="hover-info">Oveja Glotona</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </main>
-            <!-- Footer -->
-            <footer class="container-fluid bg-white py-3 border-top">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <span class="text-muted">© 2025 Ovejacinta. Todos los derechos reservados.</span>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <a href="#" class="text-decoration-none text-muted me-3">Términos</a>
-                        <a href="#" class="text-decoration-none text-muted me-3">Privacidad</a>
-                        <a href="#" class="text-decoration-none text-muted">Contacto</a>
-                    </div>
+                </main>
+                <div class="row">
+                    <!-- Footer -->
+                    <footer class="container-fluid bg-white py-3 border-top">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <span class="text-muted">© 2025 Ovejacinta. Todos los derechos reservados.</span>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <a href="#" class="text-decoration-none text-muted me-3">Términos</a>
+                                <a href="#" class="text-decoration-none text-muted me-3">Privacidad</a>
+                                <a href="#" class="text-decoration-none text-muted">Contacto</a>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
     <script src="../static/js/usuario.js"></script>

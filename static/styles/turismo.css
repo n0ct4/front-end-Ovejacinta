@@ -1,30 +1,32 @@
 /* Estilos generales */
+/*
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
+}*/
+/*
 html,
 body {
-    height: 100%;
-    margin: 0;
+    /*height: 100%;*/
+    /*margin: 0;
     padding: 0;
-    overflow-x: hidden;
-}
+    /*overflow-x: hidden;*/
+*/
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
+    /*overflow-x: hidden;
+    /*display: flex;
+    /*flex-direction: column;
     min-height: 100vh;
-    position: relative;
+    /*position: relative;*/
 }
 
 /* Diseño del contenedor y las filas */
+/*
 .container-fluid {
     width: 100%;
     flex: 1 0 auto;
@@ -35,10 +37,11 @@ body {
     width: 100%;
     margin-bottom: 50px;
 }
+*/
 
-/* Estilos de la barra lateral */
+/*Estilos navbar sin minimizar*/
 .sidebar {
-    background-color: #ffffff;
+    background-color: #fff;
     min-height: 100vh;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -48,7 +51,6 @@ body {
     border-bottom: 1px solid #eee;
     font-weight: 600;
     color: #333;
-    text-align: center;
 }
 
 .sidebar-item {
@@ -78,6 +80,7 @@ body {
 }
 
 /* Diseño fijo para la barra lateral */
+/*
 .col-md-3,
 .col-lg-2 {
     width: 260px;
@@ -88,16 +91,18 @@ body {
     bottom: 0;
     z-index: 100;
 }
+*/
 
-.col-md-9,
+/*.col-md-9,
 .col-lg-10 {
     flex: 1;
     margin-left: 260px;
     /* Igual al ancho de la barra lateral */
-    width: calc(100% - 260px);
-}
+    /*width: calc(100% - 260px);*/
+
 
 /* Perfil de usuario en la barra lateral */
+/*
 .text-center {
     text-align: center;
 }
@@ -125,7 +130,7 @@ body {
 /* Estilos del contenido principal */
 .main-content {
     padding: 30px 50px;
-    width: 100%;
+    width: 103%;
     background-color: #eeeeee;
 }
 
@@ -189,6 +194,7 @@ img {
 }
 
 /* Navegación */
+/*
 .nav {
     display: flex;
     flex-direction: column;
@@ -203,6 +209,7 @@ img {
 }
 
 /* Estilos del footer */
+/*
 footer {
     flex-shrink: 0;
     width: 100%;
@@ -222,6 +229,7 @@ footer .container {
     padding: 0 15px;
 }
 
+/*
 footer .row {
     margin-bottom: 0;
 }
@@ -234,7 +242,7 @@ footer a {
 
 footer a:hover {
     color: #333;
-}
+}*/
 
 /* Estilos responsivos */
 @media (max-width: 992px) {
@@ -251,18 +259,6 @@ footer a:hover {
 
 @media (max-width: 768px) {
 
-    .col-md-3,
-    .col-lg-2 {
-        position: relative;
-        width: 100%;
-        flex: 0 0 100%;
-    }
-
-    .col-md-9,
-    .col-lg-10 {
-        margin-left: 0;
-        width: 100%;
-    }
 
     .row {
         flex-direction: column;
@@ -284,15 +280,16 @@ footer a:hover {
         min-height: auto;
     }
 
+    
     /* Ajustes del footer para móviles */
-    footer {
+    /*footer {
         text-align: center;
     }
 
     footer .text-md-end {
         text-align: center !important;
         margin-top: 0.5rem;
-    }
+    }*/
 }
 
 /* Carrusel */
@@ -419,3 +416,111 @@ section:last-of-type {
 .main-content>div:last-child {
     margin-bottom: 0;
 }
+
+
+
+
+/* Estilos para el navbar colapsable */
+
+/*Para poder hacer scroll*/
+.scroll-vertical {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar.minimized.scroll-vertical{
+    width: 94%;
+}
+
+.scroll-horizontal {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.scroll-both {
+    max-height: 400px;
+    max-width: 120%;
+    overflow: auto;
+}
+
+
+/*Para esconder el navabr*/
+.sidebar.minimized {
+    width: 80px; 
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Oculta todo excepto logo y botón */
+.sidebar.minimized .p-3,
+.sidebar.minimized nav,
+.sidebar.minimized .user-info {
+    display: none !important;
+}
+
+/*Estilos del sidebar cuando se encuentra minimizado*/
+.sidebar.minimized .botonColapse {
+    margin-top: 9%;
+    margin-left: -15%;
+    display: block !important
+
+}
+
+
+.sidebar.minimized .rounded-circle {
+    display: none !important;
+}
+
+
+.sidebar.minimized .sidebar-brand {
+    margin-top: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    width: 80px; 
+    height: 16px;
+}
+
+.botonColapse {
+    display: flex;
+    margin-left: 74%;
+    margin-top: 29%;
+    flex-direction: column;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    background: transparent;
+    gap: .65rem;
+}
+
+.botonColapse > div {
+    background: #000;
+    height: 2px;
+    width: 16%;
+    border-radius: 5px;
+    transition: all .5s;
+    transform-origin: left;
+}
+
+.sidebar:not(.minimized) .botonColapse:hover div:first-child {
+    transform: rotate(45deg);
+}
+
+.sidebar:not(.minimized) .botonColapse:hover div:nth-child(2) {
+    opacity: 0;
+}
+
+.sidebar:not(.minimized) .botonColapse:hover div:last-child {
+    transform: rotate(-45deg);
+}
+
+/* Estilo para el contenedor que contiene el sidebar y el contenido principal */
+.contenido-fijo {
+    width: 100%;
+}
+
+.main-content.expanded {
+    width: 94.7%;
+}
+
