@@ -510,3 +510,138 @@ document.addEventListener('DOMContentLoaded', async function cargarViajes() {
         console.log("Error:", error);
     }
 });
+
+async function cargarViajesInvitados() {
+    try {
+        // 1. Obtener datos del usuario
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        if (!userData || !userData.id) {
+            console.error("Usuario no autenticado");
+            return;
+        }
+
+        // 2. Verificar contenedor HTML
+        const container = document.getElementById('viajesInvitadosContainer');
+        if (!container) {
+            console.error("Contenedor no encontrado");
+            return;
+        }
+
+        // 3. Mostrar estado de carga
+        container.innerHTML = `
+            <div class="text-center py-4">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+                <p class="mt-2">Cargando tus viajes aceptados...</p>
+            </div>
+        `;
+
+        // 4. Hacer la petición al endpoint correcto
+        const response = await fetch(`http://localhost:5065/api/Viajes/InvitacionesAceptadas/${userData.id}`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+                'accept': '*/*'
+            }
+        });
+
+        // 5. Manejar errores de respuesta
+        if (!response.ok) {
+            throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        // 6. Verificar estructura de respuesta
+        if (!data.validez || !data.contenido) {
+            throw new Error("Estructura de respuesta inválida");
+        }
+
+        // 7. Limpiar contenedor
+        container.innerHTML = '';
+
+        // 8. Mostrar resultados
+        if (data.contenido.length === 0) {
+            container.innerHTML = `
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    No tienes invitaciones aceptadas actualmente.
+                </div>
+            `;
+            return;
+        }
+
+        // 9. Procesar cada viaje
+        for (const viaje of data.contenido) {
+            try {
+                // Formatear fechas
+                const fechaInicio = new Date(viaje.fechaInicioViaje).toLocaleDateString('es-ES', {
+                    day: '2-digit', 
+                    month: 'short', 
+                    year: 'numeric'
+                });
+                
+                const fechaFin = new Date(viaje.fechaFinalViaje).toLocaleDateString('es-ES', {
+                    day: '2-digit', 
+                    month: 'short', 
+                    year: 'numeric'
+                });
+
+                // Obtener nombre del creador
+                const nombreCreador = await obtenerNombreTurista(viaje.idTuristaCreador);
+
+                // Crear card del viaje
+                const card = document.createElement('div');
+                card.className = 'mb-4 animate__animated animate__fadeIn';
+                card.innerHTML = `
+                    <div class="card viaje-card shadow-sm rounded-4 border-0 p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="fw-semibold text-dark m-0">${viaje.nombre}</h4>
+                            <span class="badge bg-success text-white px-3 py-2 rounded-pill">
+                                <i class="fas fa-check-circle me-1"></i> Aceptado
+                            </span>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between text-muted small mb-3">
+                            <div>
+                                <i class="fas fa-calendar-alt me-2"></i>
+                                ${fechaInicio} - ${fechaFin}
+                            </div>
+                            <div>
+                                <i class="fas fa-user me-2"></i>
+                                Organizador: ${nombreCreador}
+                            </div>
+                        </div>
+                        
+                        <p class="text-secondary mb-4">${viaje.descripcion}</p>
+                        
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-outline-primary rounded-pill px-3" 
+                                    onclick="verDetalles(${viaje.id})">
+                                <i class="fas fa-eye me-1"></i> Ver detalles
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            } catch (error) {
+                console.error("Error al procesar viaje:", viaje.id, error);
+            }
+        }
+    } catch (error) {
+        console.error("Error al cargar viajes invitados:", error);
+        
+        const container = document.getElementById('viajesInvitadosContainer');
+        if (container) {
+            container.innerHTML = `
+                <div class="alert alert-info">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Aún no tienes invitaciones aceptadas o ha ocurrido un error al cargar los viajes.
+                </div>
+            `;
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', cargarViajesInvitados);

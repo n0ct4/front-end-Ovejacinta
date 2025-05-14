@@ -306,6 +306,7 @@ async function aceptarInvitacion(invitacion) {
         
         // Crear el objeto con la estructura exacta que espera el backend
         const invitacionData = {
+            "idTuristaAnfitrion": invitacion.idTuristaAnfitrion,
             "correoUsuarioInvitado": userData.correo, // Asumo que el correo está en userData
             "idViajeAsociado": invitacion.idViajeAsociado,
             "fechaEmision": new Date().toISOString() // Formato: "2023-05-07T07:13:45.931Z"
