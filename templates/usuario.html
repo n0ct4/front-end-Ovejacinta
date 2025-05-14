@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../static/styles/usuario.css">
+    <link rel="stylesheet" href="../static/styles/css_carrusel.css">
     <title>Panel de Usuario | Ovejacinta</title>
 </head>
 
@@ -106,7 +107,7 @@
                     </div>
 
                     <!-- Destinos destacados -->
-                    <div class="card border-0 shadow-sm mb-4">
+                    <!-- <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h5 class="card-title mb-0">
@@ -145,6 +146,20 @@
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+                    <div class="puntos-interes-carrusel">
+                        <div class="carrusel-container">
+                            <button class="carrusel-btn prev-btn">&lt;</button>
+                            <div class="carrusel">
+                                <!-- Los puntos de interés se cargarán aquí dinámicamente -->
+                            </div>
+                            <button class="carrusel-btn next-btn">&gt;</button>
+                        </div>
+                    </div>
+
+                    <div id="overlay">
+                        <span id="close">✖</span>
+                        <img id="imagenGrande" src="" alt="Imagen en pantalla completa">
                     </div>
 
                     <div><br></div>
@@ -271,6 +286,7 @@
     </div>
     <script src="../static/js/usuario.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/js_carrusel.js"></script>
 </body>
 
 </html>
