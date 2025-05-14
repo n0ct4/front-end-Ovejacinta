@@ -336,6 +336,10 @@ footer {
         align-items: center;
         /* Centra verticalmente */
     }
+
+    .card-body > p {
+        text-align: center;
+    }
 }
 
 h1,
