@@ -15,175 +15,173 @@
 </head>
 
 <body>
-    <div class="row">
-        <!-- Sidebar -->
-        <div class="col-md-3 col-lg-2 sidebar p-0" id="sidebar">
-            <div class="sidebar-brand text-center">
-                <div class="row">
-                    <button class="botonColapse" id="menu-boton">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </button>
-                </div>
-                <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Usuario"
-                    class="rounded-circle mb-2 align-items" style="width: 80px; height: 80px;">
-            </div>
-            <div class="p-3">
-                <div class="text-center mb-4 mt-3">
-                    <img src="../static/img/images.jpg" alt="Usuario" class="rounded-circle mb-2"
-                        style="width: 80px; height: 80px;">
-                    <h6 class="mb-0 nombre-bienvenida" id=""></h6>
-                    <small class="text-muted">Turista</small>
-                </div>
-
-                <nav class="nav flex-column">
-                    <a href="/usuario" class="sidebar-item">
-                        <i class="fas fa-home me-2"></i>Inicio
-                    </a>
-                    <a href="/perfil" class="sidebar-item active">
-                        <i class="fas fa-user me-2"></i>Perfil
-                    </a>
-                    <a href="./viajes" class="sidebar-item">
-                        <i class="fas fa-route me-2"></i>Viajes
-                    </a>
-                    <a href="/turismo" class="sidebar-item">
-                        <i class="fas fa-map-marked-alt me-2"></i>Turismo
-                    </a>
-                    <a href="/contacto" class="sidebar-item">
-                        <i class="fas fa-envelope me-2"></i>Contacto
-                    </a>
-                    <a href="#" class="sidebar-item text-danger">
-                        <i class="fas fa-sign-out-alt me-2"></i>Salir
-                    </a>
-
-                </nav>
-            </div>
-        </div>
-
-
-        <div class="col-md-9 col-lg-10 main-content">
-            <!-- Contenido principal -->
-                <main class="scroll-vertical">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar p-0" id="sidebar">
+                <div class="sidebar-brand text-center">
                     <div class="row">
-                        <div class="col-md-6 conjuntoTestBienvenida">
-                            <div class="user-welcome row">
-                                <h4>¡Bienvenido, !</h4>
-                                <p class="text-muted mb-0">Aquí puedes modificar y ver los datos de tu perfil, además,
-                                    desde
-                                    aqui puedes
-                                    volver a realizar el test para ajustar tus preferencias.
-                                </p>
-                            </div>
-                            <div class="row card realizarTest">
-                                <h1 class="text-center">Realizar test</h1>
-                                <p>Desde aquí podrás volver a realizar el test para ajustar tus
-                                    preferencias y obtener mejores recomendaciones.</p>
-                                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                                    <!-- Button trigger modal -->
-                                    <a href="../form"><button type="button" class="btn botonTest">Realizar</button></a>
-                                </div>
-                            </div>
+                        <button class="botonColapse" id="menu-boton">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </button>
+                    </div>
+                    <img src="../static/img/Oveja_Guia_turistico_3.png" alt="Usuario"
+                        class="rounded-circle mb-2 align-items" style="width: 80px; height: 80px;">
+                </div>
+                <div class="p-3">
+                    <div class="text-center mb-4 mt-3">
+                        <img src="../static/img/images.jpg" alt="Usuario" class="rounded-circle mb-2"
+                            style="width: 80px; height: 80px;">
+                        <h6 class="mb-0 nombre-bienvenida" id=""></h6>
+                        <small class="text-muted">Turista</small>
+                    </div>
 
-                            <!-- notificaciones -->
-                            <div class="col">
-                                <div class="card card-notificaciones">
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h5>Tus invitaciones</h5>
-                                        <button class="btn btn-sm btn-primary botonActualizar"
-                                            onclick="actualizarInvitaciones()">
-                                            <i class="fas fa-sync-alt"></i> Actualizar
-                                        </button>
-                                    </div>
-                                    <div class="card-body" id="invitacionesContainer">
-                                        <!-- Las invitaciones se cargarán aquí -->
-                                        <div class="text-center">
-                                            <div class="spinner-border text-primary" role="status">
-                                                <span class="visually-hidden">Cargando...</span>
-                                            </div>
+                    <nav class="nav flex-column">
+                        <a href="/usuario" class="sidebar-item">
+                            <i class="fas fa-home me-2"></i>Inicio
+                        </a>
+                        <a href="/perfil" class="sidebar-item active">
+                            <i class="fas fa-user me-2"></i>Perfil
+                        </a>
+                        <a href="./viajes" class="sidebar-item">
+                            <i class="fas fa-route me-2"></i>Viajes
+                        </a>
+                        <a href="/turismo" class="sidebar-item">
+                            <i class="fas fa-map-marked-alt me-2"></i>Turismo
+                        </a>
+                        <a href="/contacto" class="sidebar-item">
+                            <i class="fas fa-envelope me-2"></i>Contacto
+                        </a>
+                        <a href="#" class="sidebar-item text-danger">
+                            <i class="fas fa-sign-out-alt me-2"></i>Salir
+                        </a>
+
+                    </nav>
+                </div>
+            </div>
+
+
+            <div class="col-md-9 col-lg-10 main-content">
+                <!-- Contenido principal -->
+                <main class="row">
+                    <div class="col-md-6 conjuntoTestBienvenida">
+                        <div class="user-welcome row">
+                            <h4>¡Bienvenido, !</h4>
+                            <p class="text-muted mb-0">Aquí puedes modificar y ver los datos de tu perfil, además,
+                                desde
+                                aqui puedes
+                                volver a realizar el test para ajustar tus preferencias.
+                            </p>
+                        </div>
+                        <div class="row card realizarTest">
+                            <h1 class="text-center">Realizar test</h1>
+                            <p>Desde aquí podrás volver a realizar el test para ajustar tus
+                                preferencias y obtener mejores recomendaciones.</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                                <!-- Button trigger modal -->
+                                <a href="../form"><button type="button" class="btn botonTest">Realizar</button></a>
+                            </div>
+                        </div>
+
+                        <!-- notificaciones -->
+                        <div class="col">
+                            <div class="card card-notificaciones">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5>Tus invitaciones</h5>
+                                    <button class="btn btn-sm btn-primary botonActualizar"
+                                        onclick="actualizarInvitaciones()">
+                                        <i class="fas fa-sync-alt"></i> Actualizar
+                                    </button>
+                                </div>
+                                <div class="card-body" id="invitacionesContainer">
+                                    <!-- Las invitaciones se cargarán aquí -->
+                                    <div class="text-center">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Cargando...</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="card col-md-6" id="cardDatosUsuario">
 
-                            <div class="row mb-7 mt-3" style="text-align: center;">
-                                <h1 class="text-center">Datos de la cuenta</h1>
-                            </div>
-                            <div class="row fotoPerfil">
-                                <img src="../static/img/images.jpg" alt="Usuario" class="rounded-circle mb-2"
-                                    style="width: 120px; height: 88px;">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label class="labels">Nombre de Usuario</label>
-                                    <input type="text" class="form-control" placeholder="Nombre de usuario"
-                                        value="nombreUsuario">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="labels">Nombre</label>
-                                    <input type="text" class="form-control" placeholder="nombre" value="nombre">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="labels">Primer Apellido</label>
-                                    <input type="text" class="form-control" value="" placeholder="Apellido1">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6"><label class="labels">Segundo Apellido</label>
-                                    <input type="text" class="form-control" value="" placeholder="Apellido2">
-                                </div>
-                                <div class="col-md-6"><label class="labels">Género</label>
-                                    <input type="text" class="form-control" placeholder="Genero" value="">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6"><label class="labels">Edad</label>
-                                    <input type="text" class="form-control" placeholder="Edad" value="">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="labels">Numero de viajes</label>
-                                    <input type="text" class="form-control" placeholder="Viajes" value="">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label class="labels">Pais</label>
-                                    <input type="text" class="form-control" placeholder="Pais" value="">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="labels">Estado/Comunidad</label>
-                                    <input type="text" class="form-control" value="" placeholder="Comunidad">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label class="labels">Correo Electronico</label>
-                                    <input type="text" class="form-control" placeholder="Correo" value="">
-                                </div>
-                            </div>
-                            <div class="text-center"><button class="btn btn-primary botonPerfil" type="button"
-                                    id="btnCambioPerfil">Guardar Cambios</button></div>
+                    </div>
+                    <div class="card col-md-6" id="cardDatosUsuario">
+
+                        <div class="row mb-7 mt-3" style="text-align: center;">
+                            <h1 class="text-center">Datos de la cuenta</h1>
                         </div>
+                        <div class="row fotoPerfil">
+                            <img src="../static/img/images.jpg" alt="Usuario" class="rounded-circle mb-2"
+                                style="width: 120px; height: 88px;">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="labels">Nombre de Usuario</label>
+                                <input type="text" class="form-control" placeholder="Nombre de usuario"
+                                    value="nombreUsuario">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="labels">Nombre</label>
+                                <input type="text" class="form-control" placeholder="nombre" value="nombre">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="labels">Primer Apellido</label>
+                                <input type="text" class="form-control" value="" placeholder="Apellido1">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"><label class="labels">Segundo Apellido</label>
+                                <input type="text" class="form-control" value="" placeholder="Apellido2">
+                            </div>
+                            <div class="col-md-6"><label class="labels">Género</label>
+                                <input type="text" class="form-control" placeholder="Genero" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"><label class="labels">Edad</label>
+                                <input type="text" class="form-control" placeholder="Edad" value="">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="labels">Numero de viajes</label>
+                                <input type="text" class="form-control" placeholder="Viajes" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="labels">Pais</label>
+                                <input type="text" class="form-control" placeholder="Pais" value="">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="labels">Estado/Comunidad</label>
+                                <input type="text" class="form-control" value="" placeholder="Comunidad">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="labels">Correo Electronico</label>
+                                <input type="text" class="form-control" placeholder="Correo" value="">
+                            </div>
+                        </div>
+                        <div class="text-center"><button class="btn btn-primary botonPerfil" type="button"
+                                id="btnCambioPerfil">Guardar Cambios</button></div>
                     </div>
                 </main>
-
-
-            <div class="row">
-                <footer class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <span class="text-muted">© 2025 Ovejacinta. Todos los derechos reservados.</span>
+                <div class="row">
+                    <footer class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="text-muted">© 2025 Ovejacinta. Todos los derechos reservados.</span>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <a href="#" class="text-decoration-none text-muted me-3">Términos</a>
+                                <a href="#" class="text-decoration-none text-muted me-3">Privacidad</a>
+                                <a href="#" class="text-decoration-none text-muted">Contacto</a>
+                            </div>
                         </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="#" class="text-decoration-none text-muted me-3">Términos</a>
-                            <a href="#" class="text-decoration-none text-muted me-3">Privacidad</a>
-                            <a href="#" class="text-decoration-none text-muted">Contacto</a>
-                        </div>
-                    </div>
-                </footer>
+                    </footer>
+                </div>
             </div>
         </div>
     </div>
