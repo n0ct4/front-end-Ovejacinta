@@ -255,3 +255,27 @@ footer {
     }
 
 }
+
+/*Estilo boton actualizar*/
+.botonActualizar:hover {
+    background-color: #3f4f58;
+}
+.botonActualizar:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #7ea3b9;
+}
+
+.botonActualizar {
+    background-color: #60859a;
+}
+
+
+.card-notificaciones {
+    border: none;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+
+}
+.card-header {
+    padding-top: 3%;
+    background-color: #eeeeee;
+}
