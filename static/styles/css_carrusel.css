@@ -1,0 +1,123 @@
+.puntos-interes-carrusel {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .puntos-interes-carrusel .carrusel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+  }
+  
+  .puntos-interes-carrusel .carrusel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 0;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .puntos-interes-carrusel .carrusel::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+  }
+  
+  .puntos-interes-carrusel .tarjeta {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .puntos-interes-carrusel .tarjeta:hover {
+    transform: translateY(-5px);
+  }
+  
+  .puntos-interes-carrusel .tarjeta h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .puntos-interes-carrusel .tarjeta .direccion {
+    color: #666;
+    font-size: 0.9em;
+    margin: 10px 0;
+  }
+  
+  .puntos-interes-carrusel .tarjeta .descripcion {
+    color: #444;
+    font-size: 0.9em;
+  }
+  
+  .puntos-interes-carrusel .carrusel-btn {
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  
+  .puntos-interes-carrusel .carrusel-btn:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  
+  .puntos-interes-carrusel .prev-btn {
+    left: 0;
+  }
+  
+  .puntos-interes-carrusel .next-btn {
+    right: 0;
+  }
+  
+  .puntos-interes-carrusel .categoria {
+    display: inline-block;
+    padding: 3px 8px;
+    background: #4f5bf7;
+    border-radius: 4px;
+    font-size: 0.8em;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#overlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
