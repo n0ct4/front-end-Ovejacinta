@@ -323,11 +323,18 @@ footer {
     }
 
     .ImagenEquipo {
-        height: 400px; 
-        width: 800px; 
-        margin-left: 17%; 
-        margin-top: 5%; 
+        height: 400px;
+        width: 800px;
+        margin-top: 5%;
         margin-bottom: 5%
+    }
+
+    .team-card {
+        display: flex;
+        justify-content: center;
+        /* Centra horizontalmente */
+        align-items: center;
+        /* Centra verticalmente */
     }
 }
 
