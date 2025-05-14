@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     "Bodegas Tradicionales": "../static/img/bodegas_tradicionales_san_esteban_de_gormaz.jpg",
     "Museo de San Esteban": "../static/img/museo_san_esteban.jpeg",
     "Parque Fluvial": "../static/img/parque_fluvial_SEdG.jpg",
-    "Pozo Artesano": "../static/img/pozo_artesiano_SEdG.jpg",
+    "Pozo Artesiano": "../static/img/pozo_artesiano_SEdG.jpg",
     "Mirador de las Eras": "../static/img/parque_fluvial_SEdG.jpg",
     "Ruta de los Molinos": "../static/img/senda_molinos_SEdG.jpg",
     "Área de descanso El Plantío": "../static/img/area_descanso_plantio_SEdG.jpg",
