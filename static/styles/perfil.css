@@ -1,28 +1,13 @@
 /*Para poder hacer scroll*/
 .scroll-vertical {
-    max-height: 100vh;
     overflow-y: auto;
 }
 
-.sidebar.minimized.scroll-vertical{
-    width: 94%;
-}
-
-.scroll-horizontal {
-    white-space: nowrap;
-    overflow-x: auto;
-}
-
-.scroll-both {
-    max-height: 400px;
-    max-width: 120%;
-    overflow: auto;
-}
 
 
 /*Para esconder el navabr*/
 .sidebar.minimized {
-    width: 80px; 
+    width: 80px;
     overflow: hidden;
     transition: all 0.3s ease;
 }
@@ -51,7 +36,7 @@
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
-    width: 80px; 
+    width: 80px;
     height: 16px;
 }
 
@@ -67,7 +52,7 @@
     gap: .65rem;
 }
 
-.botonColapse > div {
+.botonColapse>div {
     background: #000;
     height: 2px;
     width: 150%;
@@ -98,7 +83,6 @@ body {
 /*Estilos navbar sin minimizar*/
 .sidebar {
     background-color: #fff;
-    min-height: 100vh;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -195,27 +179,26 @@ body {
 /*Footer*/
 footer {
     background-color: #fff;
-    padding: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 5rem;
     border-top: 1px solid #eee;
 }
 
 .main-content.expanded {
-    width: 94.70%;
+    width: 95%;
 }
 
 
 
 /*Cajas perfil*/
 @media (min-width: 768px) {
-
-
     .fotoPerfil {
         margin-bottom: 4%;
         margin-top: 3%;
         margin-left: 39%;
     }
-    
-    .fotoPerfil > small {
+
+    .fotoPerfil>small {
         margin-left: 1%;
     }
 
@@ -238,8 +221,9 @@ footer {
         width: 48%;
     }
 
-    .col-md-6 > input {
-        width: 100%;;
+    .col-md-6>input {
+        width: 100%;
+        ;
     }
 
     .realizarTest {
@@ -250,7 +234,8 @@ footer {
         border: none;
         box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
     }
-    .realizarTest > p {
+
+    .realizarTest>p {
         margin-top: 2%;
     }
 
@@ -260,6 +245,7 @@ footer {
 .botonActualizar:hover {
     background-color: #3f4f58;
 }
+
 .botonActualizar:focus {
     outline: none;
     box-shadow: 0 0 0 4px #7ea3b9;
@@ -276,7 +262,12 @@ footer {
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
 
 }
+
 .card-header {
     padding-top: 3%;
     background-color: #eeeeee;
+}
+
+.Contenido {
+    min-height: 100vh;
 }
